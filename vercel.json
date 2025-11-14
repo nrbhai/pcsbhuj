@@ -1,7 +1,9 @@
 {
-  "buildCommand": "cd client && npm install && npm run build",
-  "outputDirectory": "client/build",
-  "installCommand": "echo 'Skipping root install'",
+  "buildCommand": "npm install && npm run build",
+  "outputDirectory": "build",
+  "installCommand": "npm install",
+  "devCommand": "npm start",
+  "framework": "create-react-app",
   "rewrites": [
     {
       "source": "/(.*)",
