@@ -9,7 +9,8 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "build": "cd client && npm run build",
     "install-client": "cd client && npm install",
-    "install-all": "npm install && npm run install-client"
+    "install-all": "npm install && npm run install-client",
+    "vercel-build": "npm run install-client && npm run build"
   },
   "keywords": ["computers", "laptops", "cctv", "bhuj"],
   "author": "Pioneer Computer Services",
