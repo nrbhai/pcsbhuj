@@ -18,33 +18,28 @@ function Contact() {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    setStatus({ type: '', message: '' });
 
-    try {
-      const response = await fetch('http://localhost:5000/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        setStatus({ type: 'success', message: data.message });
-        setFormData({ name: '', email: '', phone: '', message: '' });
-      } else {
-        setStatus({ type: 'error', message: 'Something went wrong. Please try again.' });
-      }
-    } catch (error) {
-      setStatus({ type: 'error', message: 'Unable to send message. Please try again later.' });
-    } finally {
-      setLoading(false);
-    }
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`Contact Form: Message from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\n` +
+      `Email: ${formData.email}\n` +
+      `Phone: ${formData.phone}\n\n` +
+      `Message:\n${formData.message}`
+    );
+    
+    window.location.href = `mailto:pioneerbhuj@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Show success message
+    setStatus({ 
+      type: 'success', 
+      message: 'Opening your email client. Please send the message from there.' 
+    });
+    setFormData({ name: '', email: '', phone: '', message: '' });
+    setLoading(false);
   };
 
   return (
