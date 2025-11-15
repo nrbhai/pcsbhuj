@@ -9,6 +9,7 @@ function Brands() {
       icon: '💻',
       image: 'brand-computers.jpg',
       link: '/computers-laptops',
+      color: 'blue',
       brands: [
         { name: 'Lenovo', logo: 'lenovo-logo.png' },
         { name: 'HP', logo: 'hp-logo.png' },
@@ -22,6 +23,7 @@ function Brands() {
       icon: '📹',
       image: 'brand-cctv.jpg',
       link: '/cctv',
+      color: 'purple',
       brands: [
         { name: 'CP Plus', logo: 'cpplus-logo.png' },
         { name: 'Hikvision', logo: 'hikvision-logo.png' },
@@ -33,6 +35,7 @@ function Brands() {
       icon: '🖱️',
       image: 'brand-accessories.jpg',
       link: '/accessories',
+      color: 'green',
       brands: [
         { name: 'Logitech', logo: 'logitech-logo.png' },
         { name: 'TVS', logo: 'tvs-logo.png' },
@@ -45,6 +48,7 @@ function Brands() {
       icon: '🖨️',
       image: 'brand-printers.jpg',
       link: '/printers',
+      color: 'orange',
       brands: [
         { name: 'HP', logo: 'hp-logo.png' },
         { name: 'Canon', logo: 'canon-logo.png' },
@@ -57,6 +61,7 @@ function Brands() {
       icon: '💼',
       image: 'brand-software.jpg',
       link: '/software',
+      color: 'pink',
       brands: [
         { name: 'Tally', logo: 'tally-logo.png' },
         { name: 'Microsoft Office', logo: 'office-logo.png' },
@@ -71,6 +76,7 @@ function Brands() {
       icon: '💻',
       image: 'brand-development.jpg',
       link: '/development',
+      color: 'teal',
       brands: [
         { name: 'Custom Solutions', logo: 'custom-dev-logo.png' },
         { name: 'Web Development', logo: 'web-dev-logo.png' },
@@ -82,6 +88,7 @@ function Brands() {
       icon: '🖥️',
       image: 'brand-servers.jpg',
       link: '/networking',
+      color: 'indigo',
       brands: [
         { name: 'Windows Server', logo: 'windows-logo.png' },
         { name: 'Linux', logo: 'linux-logo.png' }
@@ -100,7 +107,7 @@ function Brands() {
 
         <div className="brands-grid">
           {brandCategories.map((item, index) => (
-            <Link key={index} to={item.link} className="brand-category-card">
+            <Link key={index} to={item.link} className={`brand-category-card card-${item.color}`}>
               <div className="brand-image-container">
                 <img 
                   src={`/images/${item.image}`} 
