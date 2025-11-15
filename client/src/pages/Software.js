@@ -62,7 +62,7 @@ function Software() {
       <div className="product-hero">
         <div className="container">
           <h1 className="page-title">Software Solutions</h1>
-          <p className="page-subtitle">Authorized dealer for Tally, Microsoft, Adobe, and leading antivirus software in Bhuj, Kutch. Genuine licenses with full support.</p>
+          <p className="page-subtitle">Dealing in Tally, Microsoft, Adobe, and leading antivirus software in Bhuj, Kutch. Genuine licenses with full support.</p>
         </div>
       </div>
 

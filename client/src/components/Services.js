@@ -1,14 +1,40 @@
+
+
+
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Services.css';
 
 function Services() {
   const [services, setServices] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Fetch services from API
     fetch('http://localhost:5000/api/services')
       .then(response => response.json())
-      .then(data => setServices(data))
+      .then(data => {
+        // Remove any 'Accessories' service returned by the API
+        const filtered = Array.isArray(data)
+          ? data.filter(s => !(s.title && /accessories/i.test(s.title)))
+          : data;
+
+        // Ensure a concise shortDescription exists for each service
+        const mapped = (Array.isArray(filtered) ? filtered : [])
+          .map((s) => {
+            const desc = s.description || '';
+            let short = s.shortDescription || '';
+            if (!short) {
+              const firstPeriod = desc.indexOf('. ');
+              if (firstPeriod > -1 && firstPeriod < 120) short = desc.slice(0, firstPeriod + 1);
+              else if (desc.length > 90) short = desc.slice(0, 87) + '...';
+              else short = desc;
+            }
+            return { ...s, shortDescription: short };
+          });
+
+        setServices(mapped);
+      })
       .catch(error => {
         console.error('Error fetching services:', error);
         // Fallback data if API is not available
@@ -16,30 +42,40 @@ function Services() {
           {
             id: 1,
             title: 'Computers & Laptops Service Support',
-            description: 'Complete hardware & software service support for all computer systems',
+            shortDescription: 'Expert laptop & desktop repairs — fast, reliable on-site & in-shop service.',
+            description: 'Comprehensive repair and maintenance for computers and laptops — hardware diagnostics, component repairs and replacements, operating system and software troubleshooting, performance tuning, and reliable on-site or in-shop support.',
             icon: '💻'
           },
           {
             id: 2,
             title: 'CCTV Camera Solutions',
+            shortDescription: 'Professional CCTV installation, monitoring & maintenance.',
             description: 'Complete surveillance systems with installation and maintenance',
             icon: '📹'
           },
           {
             id: 3,
             title: 'Software Solutions',
+            shortDescription: 'Genuine software sales, installation and troubleshooting.',
             description: 'Licensed software, custom development, and software support',
             icon: '💿'
-          },
-          {
-            id: 4,
-            title: 'Client Server Installations',
-            description: 'Complete server setup, networking, and client-server solutions',
-            icon: '🖥️'
           }
         ]);
       });
   }, []);
+
+  // Helper to produce a short, clear description for service cards
+  const getCardDescription = (service) => {
+    if (!service) return '';
+    if (service.shortDescription) return service.shortDescription;
+    const text = service.description || '';
+    // Prefer first sentence if short
+    const firstPeriod = text.indexOf('. ');
+    if (firstPeriod > -1 && firstPeriod < 140) return text.slice(0, firstPeriod + 1);
+    // Otherwise truncate to ~120 chars
+    if (text.length > 120) return text.slice(0, 117) + '...';
+    return text;
+  };
 
   return (
     <section className="services" id="services">
@@ -52,19 +88,49 @@ function Services() {
         
         <div className="services-grid">
           {services.map((service) => (
-            <div key={service.id} className="service-card">
-              <div className="service-image">
-                <img 
-                  src={`/images/${service.id === 1 ? 'com-lap' : service.id === 2 ? 'cctv' : service.id === 3 ? 'software' : 'server'}.jpg`}
-                  alt={service.title}
-                />
+            service.id === 1 ? (
+              <div
+                key={service.id}
+                className="service-card clickable"
+                onClick={() => navigate('/service-computers-laptops')}
+                style={{ cursor: 'pointer' }}
+                tabIndex={0}
+                role="button"
+                aria-label="View Computers & Laptops Service Details"
+                onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') navigate('/service-computers-laptops'); }}
+              >
+                <div className="service-image">
+                  <picture>
+                    <source srcSet="/images/com-lap.webp" type="image/webp" />
+                    <img src="/images/com-lap.svg" alt={service.title} />
+                  </picture>
+                </div>
+                <div className="service-content">
+                  <div className="service-icon">{service.icon}</div>
+                  <h3>{service.title}</h3>
+                  <p>{/computer|laptop/i.test(service.title) ? 'Expert laptop & desktop repairs — fast, reliable on-site & in-shop service.' : getCardDescription(service)}</p>
+                </div>
               </div>
-              <div className="service-content">
-                <div className="service-icon">{service.icon}</div>
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
+            ) : (
+              <div key={service.id} className="service-card">
+                <div className="service-image">
+                  {(() => {
+                    const base = service.id === 2 ? 'cctv' : service.id === 3 ? 'software' : 'placeholder-service';
+                    return (
+                      <picture>
+                        <source srcSet={`/images/${base}.webp`} type="image/webp" />
+                        <img src={`/images/${base}.svg`} alt={service.title} />
+                      </picture>
+                    );
+                  })()}
+                </div>
+                <div className="service-content">
+                  <div className="service-icon">{service.icon}</div>
+                  <h3>{service.title}</h3>
+                  <p>{/computer|laptop/i.test(service.title) ? 'Expert laptop & desktop repairs — fast, reliable on-site & in-shop service.' : getCardDescription(service)}</p>
+                </div>
               </div>
-            </div>
+            )
           ))}
         </div>
 
@@ -121,3 +187,4 @@ function Services() {
 }
 
 export default Services;
+

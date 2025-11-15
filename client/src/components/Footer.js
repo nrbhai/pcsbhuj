@@ -62,7 +62,7 @@ function Footer() {
             <p className="tagline">Empowering Kutch with Technology Excellence for Over 30 Years</p>
           </div>
           <div className="footer-badges">
-            <span className="badge">✓ Authorized Dealer</span>
+            <span className="badge">✓ Dealing In</span>
             <span className="badge">✓ Expert Support</span>
             <span className="badge">✓ Genuine Products</span>
           </div>

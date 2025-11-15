@@ -78,8 +78,10 @@ function Brands() {
       link: '/networking',
       color: 'teal',
       brands: [
-        { name: 'Windows Server', logo: 'windows-logo.png' },
-        { name: 'Linux', logo: 'linux-logo.png' }
+        { name: 'Lenovo', logo: 'lenovo-logo.png' },
+        { name: 'HP', logo: 'hp-logo.png' },
+        { name: 'Dell', logo: 'dell-logo.png' },
+        { name: 'Cisco', logo: 'cisco-logo.png' }
       ]
     }
   ];
@@ -123,7 +125,7 @@ function Brands() {
 
         <div className="brands-footer">
           <div className="brand-badge">
-            <span>✓ Authorized Dealers</span>
+            <span>✓ Dealing In</span>
           </div>
           <div className="brand-badge">
             <span>✓ Genuine Products</span>

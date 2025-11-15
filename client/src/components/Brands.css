@@ -1,41 +1,44 @@
+/* Dealing In Section - Fixed 3x2 Layout */
 .brands {
   background: linear-gradient(135deg, #fef9f5 0%, #fffbf5 50%, #fff 100%);
-  position: relative;
   padding: 80px 0;
 }
 
 .brands .container {
-  max-width: 1400px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 20px;
 }
 
+/* Grid Container - STRICT 3 COLUMNS */
 .brands-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 2rem;
+  gap: 25px;
   margin-bottom: 3rem;
 }
 
+/* Each Card */
 .brand-category-card {
   background: white;
-  border-radius: 24px;
+  border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   transition: all 0.4s ease;
   border: 3px solid;
   text-decoration: none;
   color: inherit;
-  display: block;
+  display: flex;
+  flex-direction: column;
   cursor: pointer;
 }
 
 .brand-category-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
 }
 
-/* Color Variants */
+/* Color Variants - 6 Cards */
 .card-blue {
   background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #fff 100%);
   border-color: #3b82f6;
@@ -43,7 +46,7 @@
 
 .card-blue:hover {
   border-color: #2563eb;
-  box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 20px 50px rgba(59, 130, 246, 0.3);
 }
 
 .card-purple {
@@ -53,7 +56,7 @@
 
 .card-purple:hover {
   border-color: #9333ea;
-  box-shadow: 0 20px 60px rgba(168, 85, 247, 0.3);
+  box-shadow: 0 20px 50px rgba(168, 85, 247, 0.3);
 }
 
 .card-green {
@@ -63,7 +66,7 @@
 
 .card-green:hover {
   border-color: #16a34a;
-  box-shadow: 0 20px 60px rgba(34, 197, 94, 0.3);
+  box-shadow: 0 20px 50px rgba(34, 197, 94, 0.3);
 }
 
 .card-orange {
@@ -73,7 +76,7 @@
 
 .card-orange:hover {
   border-color: #ea580c;
-  box-shadow: 0 20px 60px rgba(249, 115, 22, 0.3);
+  box-shadow: 0 20px 50px rgba(249, 115, 22, 0.3);
 }
 
 .card-pink {
@@ -83,7 +86,7 @@
 
 .card-pink:hover {
   border-color: #db2777;
-  box-shadow: 0 20px 60px rgba(236, 72, 153, 0.3);
+  box-shadow: 0 20px 50px rgba(236, 72, 153, 0.3);
 }
 
 .card-teal {
@@ -93,15 +96,15 @@
 
 .card-teal:hover {
   border-color: #0d9488;
-  box-shadow: 0 20px 60px rgba(20, 184, 166, 0.3);
+  box-shadow: 0 20px 50px rgba(20, 184, 166, 0.3);
 }
 
+/* Card Image */
 .brand-image-container {
-  position: relative;
   width: 100%;
-  height: 160px;
+  height: 180px;
   overflow: hidden;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .brand-category-image {
@@ -109,185 +112,195 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s ease;
-  filter: brightness(0.95);
 }
 
 .brand-category-card:hover .brand-category-image {
-  transform: scale(1.05);
-  filter: brightness(1);
+  transform: scale(1.1);
 }
 
+/* Card Content */
 .brand-content {
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .brand-content h3 {
   font-family: 'Raleway', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  color: var(--dark);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
+  color: #1e293b;
   text-align: center;
-  position: relative;
-  padding-bottom: 1rem;
+  text-decoration: underline;
+  text-decoration-color: #6366f1;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  text-shadow: 
+    1px 1px 0px #ffffff,
+    2px 2px 2px rgba(0, 0, 0, 0.1),
+    -1px -1px 0px rgba(255, 255, 255, 0.8);
 }
 
-.brand-content h3::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background: var(--gradient-primary);
-  border-radius: 2px;
-}
-
+/* Brand Logos Grid - SMALL SIZE */
 .brand-logos {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  align-items: center;
-  justify-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 1.2rem;
 }
 
 .brand-logo-item {
-  width: 100px;
-  height: 65px;
+  background: transparent;
+  padding: 8px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem;
-  background: #f8fafc;
-  border-radius: 10px;
-  border: 2px solid #e2e8f0;
+  height: 60px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
 }
 
 .brand-logo-item:hover {
-  border-color: var(--primary);
-  background: white;
-  transform: scale(1.08);
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .brand-logo-item img {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
-  filter: grayscale(30%);
-  transition: filter 0.3s ease;
 }
 
-.brand-logo-item:hover img {
-  filter: grayscale(0%);
-}
-
+/* View Details Link */
 .view-details {
-  text-align: center;
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #e2e8f0;
-  color: var(--primary);
+  color: inherit;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  margin-top: auto;
   transition: all 0.3s ease;
 }
 
 .brand-category-card:hover .view-details {
-  color: #4f46e5;
-  transform: translateX(5px);
+  padding-left: 5px;
 }
 
+/* Section Header */
+.brands .section-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin: 0 auto 1rem;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.brands .section-title {
+  font-family: 'Raleway', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-align: center;
+  background: linear-gradient(135deg, #1a1a1a 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.brands .section-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Footer Badges */
 .brands-footer {
   display: flex;
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
-  padding: 2rem 0;
-  border-top: 2px solid rgba(99, 102, 241, 0.1);
 }
 
 .brand-badge {
+  background: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  font-weight: 600;
+  color: #333;
+}
+
+.brand-badge span {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 1rem 2rem;
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-  color: white;
-  border-radius: 50px;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
-  transition: all 0.3s ease;
 }
 
-.brand-badge:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
-}
-
-/* Tablet - 2 columns */
+/* RESPONSIVE - Tablet: 2 columns */
 @media (max-width: 968px) {
   .brands-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .brand-content h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* RESPONSIVE - Mobile: 1 column */
+@media (max-width: 576px) {
+  .brands {
+    padding: 60px 0;
+  }
+
+  .brands .container {
+    padding: 0 20px;
+  }
+
+  .brands-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .brands .section-title {
+    font-size: 2.5rem;
   }
 
   .brand-image-container {
     height: 150px;
   }
 
-  .brand-content {
-    padding: 1.25rem;
-  }
-
   .brand-content h3 {
-    font-size: 1.3rem;
-  }
-
-  .brand-badge {
-    padding: 0.875rem 1.5rem;
-    font-size: 0.9rem;
-  }
-}
-
-/* Mobile - 1 column */
-@media (max-width: 576px) {
-  .brands-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .brand-image-container {
-    height: 140px;
-  }
-
-  .brand-content {
-    padding: 1rem;
-  }
-
-  .brand-content h3 {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
   }
 
   .brand-logo-item {
-    width: 90px;
-    height: 60px;
-    padding: 0.5rem;
+    height: 45px;
+    padding: 6px;
   }
 
   .brands-footer {
-    flex-direction: column;
-    gap: 0.75rem;
+    gap: 1rem;
   }
 
   .brand-badge {
-    padding: 0.75rem 1.25rem;
-    font-size: 0.85rem;
-    width: 100%;
-    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
   }
 }

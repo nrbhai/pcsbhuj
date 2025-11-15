@@ -55,7 +55,7 @@ function Printers() {
       <div className="product-hero">
         <div className="container">
           <h1 className="page-title">Printers & Scanners</h1>
-          <p className="page-subtitle">Authorized dealer for HP, Canon, Epson, and Brother printers in Bhuj, Kutch. Sales, service, and supplies all under one roof.</p>
+          <p className="page-subtitle">Dealing in HP, Canon, Epson, and Brother printers in Bhuj, Kutch. Sales, service, and supplies all under one roof.</p>
         </div>
       </div>
 

@@ -1,25 +1,42 @@
 import React, { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './Header.css';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setMenuOpen(false);
+  const handleNavClick = (sectionId) => {
+    setMenuOpen(false);
+    
+    // If we're not on the homepage, navigate to it first
+    if (location.pathname !== '/') {
+      navigate('/');
+      // Wait for navigation then scroll
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // If already on homepage, just scroll
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
   return (
     <header className="header">
       <div className="header-container">
-        <div className="logo">
+        <div className="logo" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
           <div className="logo-image">
             <img 
               src="/images/logo.svg" 
@@ -40,11 +57,11 @@ function Header() {
 
         <nav className={`nav ${menuOpen ? 'active' : ''}`}>
           <ul>
-            <li><a onClick={() => scrollToSection('home')}>Home</a></li>
-            <li><a onClick={() => scrollToSection('about')}>About</a></li>
-            <li><a onClick={() => scrollToSection('services')}>Services</a></li>
-            <li><a onClick={() => scrollToSection('brands')}>Brands</a></li>
-            <li><a onClick={() => scrollToSection('contact')}>Contact</a></li>
+            <li><a onClick={() => handleNavClick('home')}>Home</a></li>
+            <li><a onClick={() => handleNavClick('about')}>About</a></li>
+            <li><a onClick={() => handleNavClick('services')}>Services</a></li>
+            <li><a onClick={() => handleNavClick('brands')}>Products</a></li>
+            <li><a onClick={() => handleNavClick('contact')}>Contact</a></li>
           </ul>
         </nav>
       </div>

@@ -15,6 +15,7 @@ import Printers from './pages/Printers';
 import Software from './pages/Software';
 import Development from './pages/Development';
 import Networking from './pages/Networking';
+import ServiceComputersLaptops from './pages/ServiceComputersLaptops';
 
 function App() {
   useEffect(() => {
@@ -62,7 +63,7 @@ function App() {
         "ratingValue": "4.8",
         "reviewCount": "125"
       },
-      "description": "Leading IT solutions provider in Bhuj, Kutch since 1993. Authorized dealer for Lenovo, HP, Dell, Asus laptops, CCTV systems, networking, and software solutions."
+      "description": "Leading IT solutions provider in Bhuj, Kutch since 1993. Dealing in Lenovo, HP, Dell, Asus laptops, CCTV systems, networking, and software solutions."
     };
 
     const script = document.createElement('script');
@@ -92,6 +93,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/computers-laptops" element={<ComputersLaptops />} />
+          <Route path="/service-computers-laptops" element={<ServiceComputersLaptops />} />
           <Route path="/cctv" element={<CCTV />} />
           <Route path="/accessories" element={<Accessories />} />
           <Route path="/printers" element={<Printers />} />

@@ -38,91 +38,83 @@ function Hero() {
         <div className="shape shape-2"></div>
         <div className="shape shape-3"></div>
       </div>
-      
       <div className="container">
-        <div className="hero-content">
-          <div className="hero-badge">
-            {rating && (
-              <>
-                <span className="stars">⭐</span>
-                <span>{rating.rating} Rating</span>
-                <span className="divider">•</span>
-                <span>{rating.totalReviews}+ Reviews</span>
-              </>
-            )}
-          </div>
-          
-          <h1 className="hero-title">
-            <span className="metallic-text">Your Trusted Technology Partner</span>
-          </h1>
-          
-          <p className="hero-description">
-            Your one-stop destination for cutting-edge computers, laptops, CCTV systems, 
-            and IT solutions in Bhuj. Trusted by 3000+ customers since 1993. 🚀
-          </p>
-          
-          <div className="hero-cta">
-            <button className="btn btn-primary" onClick={scrollToContact}>
-              Get Started
-              <span className="arrow">→</span>
-            </button>
-            <a href="#services" className="btn btn-secondary">
-              View Services
-            </a>
-          </div>
-
-          <div className="hero-stats">
-            <div className="stat">
-              <div className="stat-number">30+</div>
-              <div className="stat-label">Years Experience</div>
+        {/* Top company name in one line */}
+        <div className="hero-top-row">
+          <span className="company-name-band">
+            <span className="company-name-highlight" style={{ fontSize: '2.86rem', fontWeight: 700, color: '#2d3a4a', letterSpacing: '1px' }}>
+              Pioneer Computer Services
+            </span>
+          </span>
+        </div>
+        <div className="hero-main-row">
+          <div className="hero-content">
+            <h1 className="hero-title">
+              <span className="metallic-text">Your Trusted Technology Partner</span>
+            </h1>
+            <p className="hero-description">
+              Your one-stop destination for cutting-edge computers, laptops, CCTV systems, 
+              and IT solutions in Bhuj. Trusted by 3000+ customers since 1993. 🚀
+            </p>
+            <div className="hero-cta">
+              <button className="btn btn-primary" onClick={scrollToContact}>
+                Contact
+                <span className="arrow">→</span>
+              </button>
             </div>
-            <div className="stat">
-              <div className="stat-number">3000+</div>
-              <div className="stat-label">Happy Customers</div>
+            <div className="hero-stats">
+              <div className="stat">
+                <div className="stat-number">30+</div>
+                <div className="stat-label">Years Experience</div>
+              </div>
+              <div className="stat">
+                <div className="stat-number">3000+</div>
+                <div className="stat-label">Happy Customers</div>
+              </div>
+              <div className="stat">
+                <div className="stat-number">100+</div>
+                <div className="stat-label">Server Installs</div>
+              </div>
             </div>
-            <div className="stat">
-              <div className="stat-number">100+</div>
-              <div className="stat-label">Server Installs</div>
+          </div>
+          <div className="hero-image">
+            <div className="carousel-wrapper">
+              <div className="carousel-container">
+                {carouselImages.map((image, index) => (
+                  <div
+                    key={index}
+                    className={`carousel-slide ${index === currentSlide ? 'active' : ''}`}
+                  >
+                    <img src={image.src} alt={image.alt} />
+                  </div>
+                ))}
+              </div>
+              <div className="carousel-dots">
+                {carouselImages.map((_, index) => (
+                  <button
+                    key={index}
+                    className={`dot ${index === currentSlide ? 'active' : ''}`}
+                    onClick={() => setCurrentSlide(index)}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
-
-        <div className="hero-image">
-          <div className="carousel-wrapper">
-            <div className="carousel-container">
-              {carouselImages.map((image, index) => (
-                <div
-                  key={index}
-                  className={`carousel-slide ${index === currentSlide ? 'active' : ''}`}
-                >
-                  <img src={image.src} alt={image.alt} />
-                </div>
-              ))}
-            </div>
-            <div className="carousel-dots">
-              {carouselImages.map((_, index) => (
-                <button
-                  key={index}
-                  className={`dot ${index === currentSlide ? 'active' : ''}`}
-                  onClick={() => setCurrentSlide(index)}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
+        {/* Move features below the entire main row */}
+        <div className="hero-features hero-features-below">
+          <div className="feature-badge">
+            <span className="icon">💻</span>
+            <span>Premium Laptops</span>
           </div>
-          <div className="hero-features">
-            <div className="feature-badge">
-              <span className="icon">💻</span>
-              <span>Premium Laptops</span>
-            </div>
-            <div className="feature-badge">
-              <span className="icon">📹</span>
-              <span>CCTV Solutions</span>
-            </div>
-            <div className="feature-badge">
-              <span className="icon">⚡</span>
-              <span>Fast Support</span>
-            </div>
+          <div className="feature-badge">
+            <span className="icon">📹</span>
+            <span>CCTV Solutions</span>
+          </div>
+          <div className="feature-badge">
+            <span className="icon">⚡</span>
+            <span>Fast Support</span>
           </div>
         </div>
       </div>
