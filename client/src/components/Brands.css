@@ -5,7 +5,7 @@
 
 .brands-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-bottom: 3rem;
 }
@@ -102,7 +102,7 @@
 .brand-image-container {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 160px;
   overflow: hidden;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
@@ -121,7 +121,7 @@
 }
 
 .brand-content {
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 .brand-content h3 {
@@ -149,21 +149,21 @@
 
 .brand-logos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
   align-items: center;
   justify-items: center;
 }
 
 .brand-logo-item {
-  width: 110px;
-  height: 75px;
+  width: 100px;
+  height: 65px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.875rem;
+  padding: 0.75rem;
   background: #f8fafc;
-  border-radius: 12px;
+  border-radius: 10px;
   border: 2px solid #e2e8f0;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -234,22 +234,29 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+  .brands-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
 @media (max-width: 968px) {
   .brands-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
 
   .brand-image-container {
-    height: 180px;
+    height: 150px;
   }
 
   .brand-content {
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
 
   .brand-content h3 {
-    font-size: 1.35rem;
+    font-size: 1.3rem;
   }
 
   .brands-footer {
@@ -269,26 +276,26 @@
   }
 
   .brand-image-container {
-    height: 160px;
+    height: 140px;
   }
 
   .brand-content {
-    padding: 1.25rem;
+    padding: 1rem;
   }
 
   .brand-content h3 {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
 
   .brand-logos {
-    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
   }
 
   .brand-logo-item {
-    width: 95px;
-    height: 65px;
-    padding: 0.625rem;
+    width: 90px;
+    height: 60px;
+    padding: 0.5rem;
   }
 
   .brands-footer {
