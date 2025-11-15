@@ -88,7 +88,7 @@ function Brands() {
     <section className="brands" id="brands">
       <div className="container">
         <div className="section-badge">Our Partners</div>
-        <h2 className="section-title">Authorized Dealers</h2>
+        <h2 className="section-title">Dealing In</h2>
         <p className="section-subtitle">
           We partner with industry-leading brands to provide you with the best quality products and services
         </p>
