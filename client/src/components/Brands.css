@@ -1,14 +1,20 @@
 .brands {
   background: linear-gradient(135deg, #fef9f5 0%, #fffbf5 50%, #fff 100%);
   position: relative;
+  padding: 80px 0;
+}
+
+.brands .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .brands-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
   margin-bottom: 3rem;
-  max-width: 100%;
 }
 
 .brand-category-card {
@@ -16,7 +22,7 @@
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s ease;
   border: 3px solid;
   text-decoration: none;
   color: inherit;
@@ -90,16 +96,6 @@
   box-shadow: 0 20px 60px rgba(20, 184, 166, 0.3);
 }
 
-.card-indigo {
-  background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 50%, #fff 100%);
-  border-color: #6366f1;
-}
-
-.card-indigo:hover {
-  border-color: #4f46e5;
-  box-shadow: 0 20px 60px rgba(99, 102, 241, 0.3);
-}
-
 .brand-image-container {
   position: relative;
   width: 100%;
@@ -150,7 +146,7 @@
 
 .brand-logos {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
   align-items: center;
   justify-items: center;
@@ -167,7 +163,6 @@
   border-radius: 10px;
   border: 2px solid #e2e8f0;
   transition: all 0.3s ease;
-  cursor: pointer;
 }
 
 .brand-logo-item:hover {
@@ -234,17 +229,10 @@
   box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-  .brands-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.75rem;
-  }
-}
-
+/* Tablet - 2 columns */
 @media (max-width: 968px) {
   .brands-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
   }
 
@@ -260,16 +248,13 @@
     font-size: 1.3rem;
   }
 
-  .brands-footer {
-    gap: 1rem;
-  }
-
   .brand-badge {
     padding: 0.875rem 1.5rem;
     font-size: 0.9rem;
   }
 }
 
+/* Mobile - 1 column */
 @media (max-width: 576px) {
   .brands-grid {
     grid-template-columns: 1fr;
@@ -286,11 +271,6 @@
 
   .brand-content h3 {
     font-size: 1.2rem;
-  }
-
-  .brand-logos {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
   }
 
   .brand-logo-item {
