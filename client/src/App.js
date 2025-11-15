@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -7,6 +8,13 @@ import About from './components/About';
 import Brands from './components/Brands';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ComputersLaptops from './pages/ComputersLaptops';
+import CCTV from './pages/CCTV';
+import Accessories from './pages/Accessories';
+import Printers from './pages/Printers';
+import Software from './pages/Software';
+import Development from './pages/Development';
+import Networking from './pages/Networking';
 
 function App() {
   useEffect(() => {
@@ -67,16 +75,33 @@ function App() {
     };
   }, []);
 
-  return (
-    <div className="App">
-      <Header />
+  const HomePage = () => (
+    <>
       <Hero />
       <Brands />
       <Services />
       <About />
       <Contact />
-      <Footer />
-    </div>
+    </>
+  );
+
+  return (
+    <Router>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/computers-laptops" element={<ComputersLaptops />} />
+          <Route path="/cctv" element={<CCTV />} />
+          <Route path="/accessories" element={<Accessories />} />
+          <Route path="/printers" element={<Printers />} />
+          <Route path="/software" element={<Software />} />
+          <Route path="/development" element={<Development />} />
+          <Route path="/networking" element={<Networking />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

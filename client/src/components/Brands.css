@@ -17,6 +17,10 @@
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   border: 2px solid transparent;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
 }
 
 .brand-category-card:hover {
@@ -112,6 +116,22 @@
 
 .brand-logo-item:hover img {
   filter: grayscale(0%);
+}
+
+.view-details {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e2e8f0;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.brand-category-card:hover .view-details {
+  color: #4f46e5;
+  transform: translateX(5px);
 }
 
 .brands-footer {

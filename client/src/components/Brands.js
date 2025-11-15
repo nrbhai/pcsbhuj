@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Brands.css';
 
 function Brands() {
@@ -7,6 +8,7 @@ function Brands() {
       category: 'Computers & Laptops',
       icon: '💻',
       image: 'brand-computers.jpg',
+      link: '/computers-laptops',
       brands: [
         { name: 'Lenovo', logo: 'lenovo-logo.png' },
         { name: 'HP', logo: 'hp-logo.png' },
@@ -19,6 +21,7 @@ function Brands() {
       category: 'CCTV Systems',
       icon: '📹',
       image: 'brand-cctv.jpg',
+      link: '/cctv',
       brands: [
         { name: 'CP Plus', logo: 'cpplus-logo.png' },
         { name: 'Hikvision', logo: 'hikvision-logo.png' },
@@ -29,6 +32,7 @@ function Brands() {
       category: 'Accessories',
       icon: '🖱️',
       image: 'brand-accessories.jpg',
+      link: '/accessories',
       brands: [
         { name: 'Logitech', logo: 'logitech-logo.png' },
         { name: 'TVS', logo: 'tvs-logo.png' },
@@ -40,6 +44,7 @@ function Brands() {
       category: 'Printers',
       icon: '🖨️',
       image: 'brand-printers.jpg',
+      link: '/printers',
       brands: [
         { name: 'HP', logo: 'hp-logo.png' },
         { name: 'Canon', logo: 'canon-logo.png' },
@@ -51,6 +56,7 @@ function Brands() {
       category: 'Softwares',
       icon: '💼',
       image: 'brand-software.jpg',
+      link: '/software',
       brands: [
         { name: 'Tally', logo: 'tally-logo.png' },
         { name: 'Microsoft Office', logo: 'office-logo.png' },
@@ -64,6 +70,7 @@ function Brands() {
       category: 'Software Development',
       icon: '💻',
       image: 'brand-development.jpg',
+      link: '/development',
       brands: [
         { name: 'Custom Solutions', logo: 'custom-dev-logo.png' },
         { name: 'Web Development', logo: 'web-dev-logo.png' },
@@ -71,9 +78,10 @@ function Brands() {
       ]
     },
     {
-      category: 'Server OS',
+      category: 'Networking & Servers',
       icon: '🖥️',
       image: 'brand-servers.jpg',
+      link: '/networking',
       brands: [
         { name: 'Windows Server', logo: 'windows-logo.png' },
         { name: 'Linux', logo: 'linux-logo.png' }
@@ -92,7 +100,7 @@ function Brands() {
 
         <div className="brands-grid">
           {brandCategories.map((item, index) => (
-            <div key={index} className="brand-category-card">
+            <Link key={index} to={item.link} className="brand-category-card">
               <div className="brand-image-container">
                 <img 
                   src={`/images/${item.image}`} 
@@ -112,8 +120,9 @@ function Brands() {
                     </div>
                   ))}
                 </div>
+                <div className="view-details">View Details →</div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

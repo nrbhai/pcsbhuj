@@ -1,0 +1,657 @@
+.product-page {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.product-hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 120px 0 80px;
+  color: white;
+  text-align: center;
+}
+
+.page-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.page-subtitle {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+
+/* Sections */
+.brands-section,
+.categories-section,
+.services-section,
+.products-services-row,
+.why-choose,
+.cta-section,
+.printer-types-section,
+.software-categories-section,
+.dev-services-section,
+.technologies-section,
+.networking-services-section,
+.maintenance-section,
+.use-cases-section {
+  padding: 60px 0;
+}
+
+.brands-section h2,
+.categories-section h2,
+.services-section h2,
+.products-services-row h2,
+.why-choose h2,
+.printer-types-section h2,
+.software-categories-section h2,
+.dev-services-section h2,
+.technologies-section h2,
+.networking-services-section h2,
+.maintenance-section h2,
+.use-cases-section h2 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--dark);
+}
+
+/* Brand Cards */
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.brand-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brand-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.brand-logo {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.brand-logo img {
+  max-width: 120px;
+  max-height: 80px;
+  object-fit: contain;
+  filter: grayscale(30%);
+  transition: filter 0.3s ease;
+}
+
+.brand-card:hover .brand-logo img {
+  filter: grayscale(0%);
+}
+
+.brand-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+}
+
+.brand-card p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateX(5px);
+}
+
+.check-icon {
+  color: #10b981;
+  font-size: 1.5rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+/* Categories */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.category-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.category-card h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid var(--primary);
+}
+
+.category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Products and Services Row */
+.products-services-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.products-column,
+.services-column {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.products-column h2,
+.services-column h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.list-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Why Choose Us */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.feature h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 0.8rem;
+}
+
+.feature p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.cta-section {
+  text-align: center;
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 24px;
+  margin: 60px 0;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--dark);
+}
+
+.cta-section p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-whatsapp {
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+}
+
+.btn-primary:hover {
+  background: #4f46e5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(99, 102, 241, 0.5);
+}
+
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: white;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+}
+
+/* Printer Types */
+.types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.type-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.type-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.type-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.type-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.type-list .check-icon {
+  color: #fff;
+}
+
+/* Software Categories */
+.software-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.software-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.software-card:hover {
+  transform: translateY(-5px);
+}
+
+.software-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.software-logo {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.software-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.software-header h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin: 0;
+}
+
+.brand-name {
+  color: var(--primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0.3rem 0 0 0;
+}
+
+.software-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.software-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Development Services */
+.dev-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.dev-service-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.dev-service-card:hover {
+  transform: translateY(-5px);
+}
+
+.dev-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.dev-service-card h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 1.5rem;
+}
+
+.dev-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dev-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Technologies */
+.tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.tech-badge {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.tech-badge:hover {
+  transform: translateY(-3px);
+}
+
+/* Networking Services */
+.networking-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.networking-service-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.networking-service-card h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid var(--primary);
+}
+
+.networking-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.networking-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Maintenance */
+.maintenance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.maintenance-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Use Cases */
+.use-cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.use-case-card {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.use-case-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.use-case-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 0.8rem;
+}
+
+.use-case-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .page-title {
+    font-size: 2.5rem;
+  }
+
+  .page-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .products-services-row {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .brands-grid,
+  .categories-grid,
+  .types-grid,
+  .software-grid,
+  .dev-services-grid,
+  .networking-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-section h2 {
+    font-size: 2rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-primary,
+  .btn-whatsapp {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .product-hero {
+    padding: 100px 0 60px;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .page-subtitle {
+    font-size: 1rem;
+  }
+
+  .services-grid,
+  .features-grid,
+  .maintenance-grid,
+  .use-cases-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-grid {
+    justify-content: flex-start;
+  }
+}
