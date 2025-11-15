@@ -5,7 +5,7 @@
 
 .brands-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-bottom: 3rem;
 }
@@ -234,7 +234,7 @@
 }
 
 /* Responsive Design */
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
   .brands-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.75rem;
