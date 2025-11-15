@@ -15,8 +15,8 @@ function Services() {
         setServices([
           {
             id: 1,
-            title: 'Computers & Laptops',
-            description: 'Wide range of desktop computers and laptops from leading brands',
+            title: 'Computers & Laptops Service Support',
+            description: 'Complete hardware & software service support for all computer systems',
             icon: '💻'
           },
           {
@@ -27,26 +27,14 @@ function Services() {
           },
           {
             id: 3,
-            title: 'Computer Accessories',
-            description: 'All types of computer peripherals and accessories',
-            icon: '🖱️'
-          },
-          {
-            id: 4,
             title: 'Software Solutions',
-            description: 'Licensed software and custom software solutions',
+            description: 'Licensed software, custom development, and software support',
             icon: '💿'
           },
           {
-            id: 5,
-            title: 'Antivirus & Security',
-            description: 'Enterprise and personal antivirus solutions',
-            icon: '🛡️'
-          },
-          {
-            id: 6,
-            title: 'Server Solutions',
-            description: 'Complete server setup, maintenance, and support',
+            id: 4,
+            title: 'Client Server Installations',
+            description: 'Complete server setup, networking, and client-server solutions',
             icon: '🖥️'
           }
         ]);
@@ -67,7 +55,7 @@ function Services() {
             <div key={service.id} className="service-card">
               <div className="service-image">
                 <img 
-                  src={`/images/${service.id === 1 ? 'com-lap' : service.id === 2 ? 'cctv' : service.id === 3 ? 'accessories' : service.id === 4 ? 'software' : service.id === 5 ? 'antivirus' : 'server'}.jpg`}
+                  src={`/images/${service.id === 1 ? 'com-lap' : service.id === 2 ? 'cctv' : service.id === 3 ? 'software' : 'server'}.jpg`}
                   alt={service.title}
                 />
               </div>
