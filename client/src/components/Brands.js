@@ -72,23 +72,11 @@ function Brands() {
       ]
     },
     {
-      category: 'Software Development',
-      icon: '💻',
-      image: 'brand-development.jpg',
-      link: '/development',
-      color: 'teal',
-      brands: [
-        { name: 'Custom Solutions', logo: 'custom-dev-logo.png' },
-        { name: 'Web Development', logo: 'web-dev-logo.png' },
-        { name: 'Mobile Apps', logo: 'mobile-dev-logo.png' }
-      ]
-    },
-    {
       category: 'Networking & Servers',
       icon: '🖥️',
       image: 'brand-servers.jpg',
       link: '/networking',
-      color: 'indigo',
+      color: 'teal',
       brands: [
         { name: 'Windows Server', logo: 'windows-logo.png' },
         { name: 'Linux', logo: 'linux-logo.png' }
