@@ -79,6 +79,11 @@ function Networking() {
   return (
     <div className="product-page">
       <div className="product-hero">
+        <img 
+          src="/images/hero-networking.jpg" 
+          alt="Networking Hero" 
+          className="hero-bg-image"
+        />
         <div className="container">
           <h1 className="page-title">Networking & Server Solutions</h1>
           <p className="page-subtitle">Complete networking infrastructure and server solutions for businesses in Bhuj, Kutch. Setup, configuration, and maintenance.</p>

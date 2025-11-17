@@ -3,10 +3,10 @@ import './ProductPage.css';
 
 function Accessories() {
   const brands = [
-    { name: 'Logitech', logo: '/images/logos/logitech.png', description: 'Keyboards, Mouse, Webcams, Headsets' },
-    { name: 'TVS', logo: '/images/logos/tvs.png', description: 'Keyboards, Mouse, Barcode Scanners' },
+    { name: 'Logitech', logo: '/images/logos/logitech-logo.png', description: 'Keyboards, Mouse, Webcams, Headsets' },
+    { name: 'TVS', logo: '/images/logos/tvs-logo.png', description: 'Keyboards, Mouse, Barcode Scanners' },
     { name: 'HP', logo: '/images/logos/hp.png', description: 'Keyboards, Mouse, Headphones' },
-    { name: 'Dell', logo: '/images/logos/dell.png', description: 'Keyboards, Mouse, Monitors' }
+    { name: 'Dell', logo: '/images/logos/dell-logo.png', description: 'Keyboards, Mouse, Monitors' }
   ];
 
   const categories = [
@@ -39,6 +39,11 @@ function Accessories() {
   return (
     <div className="product-page">
       <div className="product-hero">
+        <img 
+          src="/images/hero-accessories.jpg" 
+          alt="Accessories Hero" 
+          className="hero-bg-image"
+        />
         <div className="container">
           <h1 className="page-title">Computer Accessories</h1>
           <p className="page-subtitle">Complete range of computer peripherals and accessories from leading brands in Bhuj, Kutch.</p>

@@ -102,7 +102,7 @@
 /* Card Image */
 .brand-image-container {
   width: 100%;
-  height: 180px;
+  height: 225px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.5);
 }
@@ -128,8 +128,8 @@
 
 .brand-content h3 {
   font-family: 'Raleway', sans-serif;
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-size: 1.68rem; /* 1.4rem + 20% */
+  font-weight: 800;
   margin-bottom: 1.2rem;
   color: #1e293b;
   text-align: center;
@@ -137,10 +137,13 @@
   text-decoration-color: #6366f1;
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
-  text-shadow: 
-    1px 1px 0px #ffffff,
+  text-shadow:
+    0 2px 8px rgba(99, 102, 241, 0.18),
+    0 4px 16px rgba(30, 41, 59, 0.18),
+    1px 1px 0px #fff,
     2px 2px 2px rgba(0, 0, 0, 0.1),
     -1px -1px 0px rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.01em;
 }
 
 /* Brand Logos Grid - SMALL SIZE */
@@ -158,7 +161,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60px;
+  height: 51px; /* 60px - 15% = 51px */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
 }
@@ -169,8 +172,8 @@
 }
 
 .brand-logo-item img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 85%;
+  max-height: 85%;
   object-fit: contain;
 }
 

@@ -62,6 +62,11 @@ function ComputersLaptops() {
     }
   ];
 
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   useEffect(() => {
     const initialIndices = {};
     brands.forEach((brand, index) => {
@@ -99,7 +104,14 @@ function ComputersLaptops() {
 
   return (
     <div className="product-page">
+
       <div className="product-hero">
+        {/* Background image placeholder, very transparent */}
+        <img 
+          src="/images/hero-computers.jpg" 
+          alt="Computers & Laptops Hero" 
+          className="hero-bg-image"
+        />
         <div className="container">
           <h1 className="page-title">Computers & Laptops</h1>
           <p className="page-subtitle">Dealing in leading computer brands in Bhuj, Kutch. Get genuine products with warranty and expert support.</p>

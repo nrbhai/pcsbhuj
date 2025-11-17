@@ -53,6 +53,11 @@ function Printers() {
   return (
     <div className="product-page">
       <div className="product-hero">
+        <img 
+          src="/images/hero-printers.jpg" 
+          alt="Printers Hero" 
+          className="hero-bg-image"
+        />
         <div className="container">
           <h1 className="page-title">Printers & Scanners</h1>
           <p className="page-subtitle">Dealing in HP, Canon, Epson, and Brother printers in Bhuj, Kutch. Sales, service, and supplies all under one roof.</p>

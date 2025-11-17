@@ -1,3 +1,46 @@
+.software-grid .software-card:nth-child(1) {
+  background: linear-gradient(120deg, #f3e8ff 0%, #e0e7ff 100%);
+}
+.software-grid .software-card:nth-child(2) {
+  background: linear-gradient(120deg, #fdf6e3 0%, #e0f2fe 100%);
+}
+.software-grid .software-card:nth-child(3) {
+  background: linear-gradient(120deg, #e0f2fe 0%, #f8fafc 100%);
+}
+.software-grid .software-card:nth-child(4) {
+  background: linear-gradient(120deg, #f8fafc 0%, #f3e8ff 100%);
+}
+/* Centered software logo and title for Software.js */
+.software-logo-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.software-logo-centered img {
+  max-width: 170px;
+  max-height: 170px;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  display: block;
+}
+
+.software-title-centered {
+  text-align: center;
+}
+
+.software-title-centered h3 {
+  margin-bottom: 0.3rem;
+}
+
+.software-title-centered .brand-name {
+  margin-top: 0.2rem;
+  font-size: 1.1rem;
+  color: #6366f1;
+  font-weight: 600;
+}
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 .product-page {
@@ -53,6 +96,21 @@
   backdrop-filter: blur(20px);
   position: relative;
   box-shadow: 0 4px 30px rgba(99, 102, 241, 0.1);
+  overflow: hidden;
+}
+
+.hero-bg-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 115%;
+  height: 115%;
+  object-fit: cover;
+  opacity: 0.20;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  transform: translate(-50%, -50%);
 }
 
 .product-hero::before {
@@ -102,6 +160,8 @@
 }
 
 /* Sections */
+
+
 .brands-section,
 .categories-section,
 .services-section,
@@ -371,11 +431,32 @@
   box-shadow: 0 2px 12px rgba(99, 102, 241, 0.1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: 'Inter', sans-serif;
-  font-size: 0.8rem;
-  color: rgba(30, 30, 30, 0.9);
-  font-weight: 500;
+  font-size: 1rem; /* Increased by 2pt (was 0.8rem ~ 10.7pt, now 1rem ~ 13.3pt) */
+  color: transparent;
+  font-weight: 600;
   position: relative;
   overflow: hidden;
+  background-clip: padding-box;
+}
+
+.service-item span:last-child {
+  background: linear-gradient(270deg, #e0e0e0, #b0b0b0, #6366f1, #a855f7, #e0e0e0);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  animation: metallic-roll 3s linear infinite;
+  font-weight: 700;
+}
+
+@keyframes metallic-roll {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 .service-item::before {

@@ -1,9 +1,20 @@
-.hero-top-row {
-  grid-column: 1 / -1;
-  text-align: center;
-  margin-bottom: 1.5rem;
+.hero-company-name {
+  font-size: 4.29rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  white-space: nowrap;
 }
-
+@keyframes shineText {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+ 
 .hero-main-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -26,68 +37,13 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 50%, #fff 100%);
+  background: none !important;
   padding: 8rem 0 4rem;
 }
 
-.hero-shapes {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.shape {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 0.4;
-  filter: blur(80px);
-}
-
-.shape-1 {
-  width: 600px;
-  height: 600px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  top: -300px;
-  right: -200px;
-  animation: float 20s ease-in-out infinite;
-}
-
-.shape-2 {
-  width: 400px;
-  height: 400px;
-  background: linear-gradient(135deg, var(--accent), var(--primary));
-  bottom: -200px;
-  left: -100px;
-  animation: float 15s ease-in-out infinite reverse;
-}
-
-.shape-3 {
-  width: 300px;
-  height: 300px;
-  background: linear-gradient(135deg, var(--secondary), var(--accent));
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: pulse 10s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-30px) rotate(10deg);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.2);
-  }
+/* Remove hero-shapes and shape overlays */
+.hero-shapes, .shape, .shape-1, .shape-2, .shape-3 {
+  display: none !important;
 }
 
 .hero .container {
@@ -104,6 +60,7 @@
   flex-direction: column;
   gap: 2rem;
   max-width: 960px;
+  text-align: center;
 }
 
 .hero-badge {
@@ -236,32 +193,58 @@
 }
 
 .hero-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
 }
+
 
 .stat-item {
-  text-align: left;
+  background: rgba(255,255,255,0.85);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 2rem 2.5rem 1.5rem 2.5rem;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+}
+.stat-item:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 8px 32px rgba(99,102,241,0.13);
 }
 
+
+.stat-icon {
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+  filter: drop-shadow(0 2px 4px rgba(99,102,241,0.10));
+}
+
+  
 .stat-number {
   font-family: 'Poppins', sans-serif;
-  font-size: 2.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  background: var(--gradient-primary);
+  background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.15rem;
+  letter-spacing: 0.5px;
 }
 
 .stat-label {
-  font-size: 0.95rem;
-  color: var(--text-light);
-  font-weight: 500;
+  font-size: 1.08rem;
+  color: #22223b;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-top: 0.1rem;
 }
 
 .hero-image {
@@ -273,21 +256,35 @@
 }
 
 .carousel-wrapper {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  width: 90%;
+  min-width: 320px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  background: none !important;
+  box-shadow: none !important;
+  height: 600px;
   position: relative;
-  width: 100%;
-  max-width: 960px;
-  min-width: 560px;
-  aspect-ratio: 4 / 3;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(99, 102, 241, 0.2);
-  margin: 0 auto 0 80px;
+}
+
+@media (max-width: 900px) {
+  .carousel-wrapper {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    margin-top: 25rem;
+    margin-bottom: 25rem;
+  }
 }
 
 .carousel-container {
   position: relative;
   width: 100%;
   height: 100%;
+  background: none !important;
+  box-shadow: none !important;
 }
 
 .carousel-slide {
@@ -308,6 +305,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .carousel-dots {
@@ -318,6 +316,7 @@
   display: flex;
   gap: 12px;
   z-index: 10;
+  pointer-events: auto;
 }
 
 .carousel-dots .dot {
@@ -379,6 +378,34 @@
 
 .feature-badge .icon {
   font-size: 1.5rem;
+}
+
+/* Best Offers Banner */
+.best-offers-banner {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: -1.6rem 0 0.7rem 140px;
+   padding: 0.5rem 4%;
+  background: linear-gradient(90deg, #a855f7 0%, #6366f1 100%);
+  border-radius: 2.5rem;
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 2px;
+  box-shadow: none;
+  border: none;
+  width: fit-content;
+  position: static;
+}
+
+@media (max-width: 900px) {
+  .best-offers-banner {
+    margin: 0.2rem 0 0.5rem 0;
+    justify-content: center;
+    font-size: 2rem;
+    padding: 0.4rem 1.2rem;
+  }
 }
 
 /* Responsive Design */
@@ -458,6 +485,10 @@
   .floating-card p {
     font-size: 0.85rem;
   }
+
+  .hero-company-name {
+    font-size: 3rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -475,5 +506,56 @@
 
   .hero-image {
     display: none;
+  }
+
+  .hero-company-name {
+    font-size: 2.5rem;
+  }
+}
+
+.hero-title-desc {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+@media (max-width: 900px) {
+  .hero-title-desc {
+    text-align: center;
+  }
+}
+
+.spaced-below {
+  margin-top: 5rem;
+  text-align: left;
+}
+
+@media (max-width: 900px) {
+  .spaced-below {
+    margin-top: 2.5rem;
+    text-align: center;
+  }
+}
+
+.hero-cta {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.hero-cta-and-stats {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 900px) {
+  .hero-cta-and-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 }

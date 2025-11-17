@@ -56,15 +56,17 @@ function Footer() {
 
         <div className="footer-divider"></div>
 
-        <div className="footer-bottom">
-          <div className="footer-bottom-content">
-            <p className="copyright">&copy; {currentYear} <span className="company-name-highlight">Pioneer Computer Services</span>. All rights reserved.</p>
-            <p className="tagline">Empowering Kutch with Technology Excellence for Over 30 Years</p>
-          </div>
-          <div className="footer-badges">
-            <span className="badge">✓ Dealing In</span>
-            <span className="badge">✓ Expert Support</span>
-            <span className="badge">✓ Genuine Products</span>
+        <div className="footer-bottom redesigned-footer-bottom">
+          <div className="footer-bottom-content redesigned-footer-bottom-content">
+            <span className="copyright">&copy; {currentYear} <span className="company-name-highlight">Pioneer Computer Services</span>. All rights reserved.</span>
+            <span className="footer-divider-dot">|</span>
+            <span className="tagline">Empowering Kutch with Technology Excellence for Over 30 Years</span>
+            <span className="footer-divider-dot">|</span>
+            <span className="footer-badges-inline">
+              <span className="badge">✓ Dealing In</span>
+              <span className="badge">✓ Expert Support</span>
+              <span className="badge">✓ Genuine Products</span>
+            </span>
           </div>
         </div>
       </div>

@@ -39,16 +39,13 @@ function Hero() {
         <div className="shape shape-3"></div>
       </div>
       <div className="container">
-        {/* Top company name in one line */}
         <div className="hero-top-row">
           <span className="company-name-band">
-            <span className="company-name-highlight" style={{ fontSize: '2.86rem', fontWeight: 700, color: '#2d3a4a', letterSpacing: '1px' }}>
+            <span className="company-name-highlight hero-company-name">
               Pioneer Computer Services
             </span>
           </span>
-        </div>
-        <div className="hero-main-row">
-          <div className="hero-content">
+          <div className="hero-title-desc spaced-below">
             <h1 className="hero-title">
               <span className="metallic-text">Your Trusted Technology Partner</span>
             </h1>
@@ -56,28 +53,29 @@ function Hero() {
               Your one-stop destination for cutting-edge computers, laptops, CCTV systems, 
               and IT solutions in Bhuj. Trusted by 3000+ customers since 1993. 🚀
             </p>
-            <div className="hero-cta">
+            <div className="hero-cta" style={{ margin: '1.5rem 0 0.5rem 0' }}>
               <button className="btn btn-primary" onClick={scrollToContact}>
                 Contact
                 <span className="arrow">→</span>
               </button>
             </div>
             <div className="hero-stats">
-              <div className="stat">
+              <div className="stat-item">
+                <div className="stat-icon" aria-hidden="true">🏆</div>
                 <div className="stat-number">30+</div>
                 <div className="stat-label">Years Experience</div>
               </div>
-              <div className="stat">
+              <div className="stat-item">
+                <div className="stat-icon" aria-hidden="true">😊</div>
                 <div className="stat-number">3000+</div>
                 <div className="stat-label">Happy Customers</div>
               </div>
-              <div className="stat">
+              <div className="stat-item">
+                <div className="stat-icon" aria-hidden="true">💻</div>
                 <div className="stat-number">100+</div>
                 <div className="stat-label">Server Installs</div>
               </div>
             </div>
-          </div>
-          <div className="hero-image">
             <div className="carousel-wrapper">
               <div className="carousel-container">
                 {carouselImages.map((image, index) => (
@@ -102,7 +100,11 @@ function Hero() {
             </div>
           </div>
         </div>
-        {/* Move features below the entire main row */}
+        <div className="hero-main-row">
+          <div className="hero-content">
+            {/* Only left column content remains here if needed */}
+          </div>
+        </div>
         <div className="hero-features hero-features-below">
           <div className="feature-badge">
             <span className="icon">💻</span>

@@ -6,25 +6,25 @@ function Software() {
     {
       title: 'Accounting Software',
       brand: 'Tally',
-      logo: '/images/logos/tally.png',
+      logo: '/images/logos/tally-logo.png',
       items: ['TallyPrime', 'Tally.ERP 9', 'TallyPrime Server', 'Multi-User License', 'Annual Renewal', 'Training & Support']
     },
     {
       title: 'Productivity Suite',
       brand: 'Microsoft Office',
-      logo: '/images/logos/msoffice.png',
+      logo: '/images/logos/office-logo.png',
       items: ['Office 2021 Home & Student', 'Office 2021 Home & Business', 'Office Professional Plus', 'Microsoft 365 Subscription', 'Single & Multi-User License']
     },
     {
       title: 'Creative Software',
       brand: 'Adobe',
-      logo: '/images/logos/adobe.png',
+      logo: '/images/logos/adobe-logo.png',
       items: ['Photoshop', 'Illustrator', 'InDesign', 'Premiere Pro', 'Acrobat Pro DC', 'Creative Cloud']
     },
     {
       title: 'Antivirus Solutions',
       brand: 'Quick Heal, ESET, NPAV',
-      logo: '/images/logos/quickheal.png',
+      logo: '/images/logos/quickheal-logo.png',
       items: ['Quick Heal Antivirus', 'Quick Heal Total Security', 'ESET NOD32', 'ESET Internet Security', 'NPAV Antivirus', '1, 2, 3 Year License']
     }
   ];
@@ -60,6 +60,11 @@ function Software() {
   return (
     <div className="product-page">
       <div className="product-hero">
+        <img 
+          src="/images/hero-software.jpg" 
+          alt="Software Hero" 
+          className="hero-bg-image"
+        />
         <div className="container">
           <h1 className="page-title">Software Solutions</h1>
           <p className="page-subtitle">Dealing in Tally, Microsoft, Adobe, and leading antivirus software in Bhuj, Kutch. Genuine licenses with full support.</p>
@@ -73,10 +78,10 @@ function Software() {
             {softwareCategories.map((category, index) => (
               <div key={index} className="software-card">
                 <div className="software-header">
-                  <div className="software-logo">
+                  <div className="software-logo-centered">
                     <img src={category.logo} alt={category.brand} />
                   </div>
-                  <div>
+                  <div className="software-title-centered">
                     <h3>{category.title}</h3>
                     <p className="brand-name">{category.brand}</p>
                   </div>

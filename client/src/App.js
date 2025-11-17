@@ -16,6 +16,7 @@ import Software from './pages/Software';
 import Development from './pages/Development';
 import Networking from './pages/Networking';
 import ServiceComputersLaptops from './pages/ServiceComputersLaptops';
+import OfferBanner from './components/OfferBanner';
 
 function App() {
   useEffect(() => {
@@ -78,6 +79,7 @@ function App() {
 
   const HomePage = () => (
     <>
+      <OfferBanner />
       <Hero />
       <Brands />
       <Services />

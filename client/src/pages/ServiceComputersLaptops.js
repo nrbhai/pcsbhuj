@@ -31,6 +31,11 @@ export default function ServiceComputersLaptops() {
   return (
     <div className="product-page">
       <section className="product-hero">
+        <img 
+          src="/images/hero-service-computers.jpg" 
+          alt="Service Computers & Laptops Hero" 
+          className="hero-bg-image"
+        />
         <div className="hero-content">
           <h1 className="page-title">Computers & Laptops</h1>
           <p className="page-subtitle">

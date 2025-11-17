@@ -41,6 +41,11 @@ function CCTV() {
   return (
     <div className="product-page">
       <div className="product-hero">
+        <img 
+          src="/images/hero-cctv.jpg" 
+          alt="CCTV Hero" 
+          className="hero-bg-image"
+        />
         <div className="container">
           <h1 className="page-title">CCTV Security Systems</h1>
           <p className="page-subtitle">Complete CCTV surveillance solutions for homes, offices, shops, and industries in Bhuj, Kutch.</p>

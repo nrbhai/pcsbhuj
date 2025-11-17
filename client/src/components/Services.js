@@ -34,6 +34,7 @@ function Services() {
           });
 
         setServices(mapped);
+        console.log('Loaded services:', mapped);
       })
       .catch(error => {
         console.error('Error fetching services:', error);
@@ -66,7 +67,6 @@ function Services() {
 
   // Helper to produce a short, clear description for service cards
   const getCardDescription = (service) => {
-    if (!service) return '';
     if (service.shortDescription) return service.shortDescription;
     const text = service.description || '';
     // Prefer first sentence if short
@@ -100,10 +100,7 @@ function Services() {
                 onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') navigate('/service-computers-laptops'); }}
               >
                 <div className="service-image">
-                  <picture>
-                    <source srcSet="/images/com-lap.webp" type="image/webp" />
-                    <img src="/images/com-lap.svg" alt={service.title} />
-                  </picture>
+                  <img src="/images/com-lap.jpg" alt={service.title} />
                 </div>
                 <div className="service-content">
                   <div className="service-icon">{service.icon}</div>
@@ -115,12 +112,15 @@ function Services() {
               <div key={service.id} className="service-card">
                 <div className="service-image">
                   {(() => {
-                    const base = service.id === 2 ? 'cctv' : service.id === 3 ? 'software' : 'placeholder-service';
+                    let imgSrc = '/images/placeholder-service.svg';
+                    if (/cctv/i.test(service.title)) imgSrc = '/images/cctv.jpg';
+                    else if (/software/i.test(service.title)) imgSrc = '/images/software.jpg';
+                    else if (/server/i.test(service.title)) imgSrc = '/images/server.jpg';
+                    else if (/antivirus|security/i.test(service.title)) imgSrc = '/images/antivirus.jpg';
+                    // fallback for computers/laptops
+                    else if (/computer|laptop/i.test(service.title)) imgSrc = '/images/com-lap.jpg';
                     return (
-                      <picture>
-                        <source srcSet={`/images/${base}.webp`} type="image/webp" />
-                        <img src={`/images/${base}.svg`} alt={service.title} />
-                      </picture>
+                      <img src={imgSrc} alt={service.title} />
                     );
                   })()}
                 </div>
