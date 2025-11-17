@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
@@ -38,27 +39,6 @@ function App() {
         "postalCode": "370001",
         "addressCountry": "IN"
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 23.2526169,
-        "longitude": 69.6733174
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday"
-        ],
-        "opens": "10:00",
-        "closes": "20:30"
-      },
-      "sameAs": [
-        "https://www.google.com/maps/place/PIONEER+COMPUTER+SERVICES"
-      ],
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.8",
@@ -89,23 +69,25 @@ function App() {
   );
 
   return (
-    <Router>
-      <div className="App">
-        <Header />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/computers-laptops" element={<ComputersLaptops />} />
-          <Route path="/service-computers-laptops" element={<ServiceComputersLaptops />} />
-          <Route path="/cctv" element={<CCTV />} />
-          <Route path="/accessories" element={<Accessories />} />
-          <Route path="/printers" element={<Printers />} />
-          <Route path="/software" element={<Software />} />
-          <Route path="/development" element={<Development />} />
-          <Route path="/networking" element={<Networking />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <div className="App">
+          <Header />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/computers-laptops" element={<ComputersLaptops />} />
+            <Route path="/service-computers-laptops" element={<ServiceComputersLaptops />} />
+            <Route path="/cctv" element={<CCTV />} />
+            <Route path="/accessories" element={<Accessories />} />
+            <Route path="/printers" element={<Printers />} />
+            <Route path="/software" element={<Software />} />
+            <Route path="/development" element={<Development />} />
+            <Route path="/networking" element={<Networking />} />
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+    </HelmetProvider>
   );
 }
 
