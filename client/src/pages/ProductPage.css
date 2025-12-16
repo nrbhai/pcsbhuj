@@ -23,7 +23,7 @@
   pointer-events: none;
 }
 
-.product-page > * {
+.product-page>* {
   position: relative;
   z-index: 1;
 }
@@ -94,7 +94,8 @@
   border-bottom: 1px solid var(--border-light);
 }
 
-.section-title, /* Unifying titles */
+.section-title,
+/* Unifying titles */
 .brands-section h2,
 .categories-section h2,
 .services-section h2,
@@ -224,7 +225,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
   transition: all 0.2s;
 }
 
@@ -449,10 +450,21 @@
   border: 1px solid var(--border-light);
 }
 
-.software-grid .software-card:nth-child(1) { border-top: 4px solid #8b5cf6; }
-.software-grid .software-card:nth-child(2) { border-top: 4px solid #10b981; }
-.software-grid .software-card:nth-child(3) { border-top: 4px solid #3b82f6; }
-.software-grid .software-card:nth-child(4) { border-top: 4px solid #f59e0b; }
+.software-grid .software-card:nth-child(1) {
+  border-top: 4px solid #8b5cf6;
+}
+
+.software-grid .software-card:nth-child(2) {
+  border-top: 4px solid #10b981;
+}
+
+.software-grid .software-card:nth-child(3) {
+  border-top: 4px solid #ff4d4d;
+}
+
+.software-grid .software-card:nth-child(4) {
+  border-top: 4px solid #f59e0b;
+}
 
 .software-list li {
   margin-bottom: 0.5rem;
@@ -497,21 +509,22 @@
   .page-title {
     font-size: 2.25rem;
   }
-  
+
   .brand-carousel {
     height: 200px;
   }
-  
+
   .brands-grid-carousel {
     grid-template-columns: 1fr;
   }
-  
+
   .cta-buttons {
     flex-direction: column;
     align-items: center;
   }
-  
-  .btn-primary, .btn-whatsapp {
+
+  .btn-primary,
+  .btn-whatsapp {
     width: 100%;
     justify-content: center;
   }

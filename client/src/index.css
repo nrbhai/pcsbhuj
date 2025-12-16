@@ -4,52 +4,67 @@
   font-family: "Ndot 57 Aligned";
   src: url("https://db.onlinewebfonts.com/t/d7a74ed36ff0603a3e41b6da32c47f03.eot");
   src: url("https://db.onlinewebfonts.com/t/d7a74ed36ff0603a3e41b6da32c47f03.eot?#iefix") format("embedded-opentype"),
-       url("https://db.onlinewebfonts.com/t/d7a74ed36ff0603a3e41b6da32c47f03.woff2") format("woff2"),
-       url("https://db.onlinewebfonts.com/t/d7a74ed36ff0603a3e41b6da32c47f03.woff") format("woff"),
-       url("https://db.onlinewebfonts.com/t/d7a74ed36ff0603a3e41b6da32c47f03.ttf") format("truetype"),
-       url("https://db.onlinewebfonts.com/t/d7a74ed36ff0603a3e41b6da32c47f03.svg#Ndot 57 Aligned") format("svg");
+    url("https://db.onlinewebfonts.com/t/d7a74ed36ff0603a3e41b6da32c47f03.woff2") format("woff2"),
+    url("https://db.onlinewebfonts.com/t/d7a74ed36ff0603a3e41b6da32c47f03.woff") format("woff"),
+    url("https://db.onlinewebfonts.com/t/d7a74ed36ff0603a3e41b6da32c47f03.ttf") format("truetype"),
+    url("https://db.onlinewebfonts.com/t/d7a74ed36ff0603a3e41b6da32c47f03.svg#Ndot 57 Aligned") format("svg");
 }
 
 :root {
   /* --- Core Colors (Dark Theme) --- */
-  --bg-deep: #050505; /* Rich Black */
-  --bg-body: #050505; /* Alias */
-  --bg-card: #0a0a0a; /* Deep Neutral Black */
-  --bg-card-hover: #171717; /* Dark Neutral Gray */
-  
+  --bg-deep: #050505;
+  /* Rich Black */
+  --bg-body: #050505;
+  /* Alias */
+  --bg-card: #0a0a0a;
+  /* Deep Neutral Black */
+  --bg-card-hover: #171717;
+  /* Dark Neutral Gray */
+
   /* --primary: #6366f1; Indigo 500 */
-  --primary: #2563eb; /* Royal Blue 600 */
-  --primary-glow: #3b82f6; /* Blue 500 */
-  --secondary: #ec4899; /* Pink 500 - Kept for vibrancy */
-  --accent: #06b6d4; /* Cyan 500 */
-  
+  --primary: #ff0000;
+  /* Bright Red */
+  --primary-glow: #ff4d4d;
+  /* Light Red */
+  --secondary: #ec4899;
+  /* Pink 500 - Kept for vibrancy */
+  --accent: #06b6d4;
+  /* Cyan 500 */
+
   /* --- Text Colors --- */
-  --text-main: #f8fafc; /* Slate 50 - High Contrast */
-  --text-muted: #94a3b8; /* Slate 400 - Readable Secondary */
-  --text-dim: #64748b; /* Slate 500 - Metadata */
+  --text-main: #f8fafc;
+  /* Slate 50 - High Contrast */
+  --text-muted: #94a3b8;
+  /* Slate 400 - Readable Secondary */
+  --text-dim: #64748b;
+  /* Slate 500 - Metadata */
 
   /* --- Gradients --- */
   /* --gradient-brand: linear-gradient(135deg, #6366f1 0%, #ec4899 100%); Previous Indigo-Pink */
-  --gradient-brand: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%); /* Royal Blue -> Cyan (Tech Clean) */
-  --gradient-glow: linear-gradient(90deg, #06b6d4, #2563eb, #bf953f); /* Cyan -> Blue -> Gold Touch */
+  --gradient-brand: linear-gradient(135deg, #ff0000 0%, #06b6d4 100%);
+  /* Bright Red -> Cyan */
+  --gradient-glow: linear-gradient(90deg, #06b6d4, #ff0000, #bf953f);
+  /* Cyan -> Red -> Gold Touch */
   /* Gold Gradient: Dark Gold -> Light Gold -> White Shine -> Light Gold -> Dark Gold */
   --gradient-metallic: linear-gradient(to right, #bf953f 0%, #fcf6ba 25%, #ffffff 50%, #fcf6ba 75%, #bf953f 100%);
-  
+
   /* --- Fonts --- */
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-tech: 'Ndot 57 Aligned', monospace;
-  
+
   /* --- Layout & Effects --- */
   --container-padding: 2rem;
   --radius-lg: 24px;
   --radius-md: 16px;
-  
-  --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
-  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.8); /* Stronger shadow for dark mode */
-  
+
+  --shadow-glow: 0 0 20px rgba(255, 0, 0, 0.3);
+  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
+  /* Stronger shadow for dark mode */
+
   --glass-bg: rgba(0, 0, 0, 0.7);
-  --glass-border: 1px solid rgba(255, 255, 255, 0.08); /* Consistent border opacity */
+  --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+  /* Consistent border opacity */
 }
 
 /* Reset & Base */
@@ -62,14 +77,20 @@
 body {
   margin: 0;
   font-family: var(--font-body);
-  background-color: var(--bg-deep); /* Enforce dark bg */
+  background-color: var(--bg-deep);
+  /* Enforce dark bg */
   color: var(--text-main);
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   line-height: 1.2;
   background: var(--gradient-metallic);
@@ -119,10 +140,10 @@ img {
 
 .text-highlight {
   /* Ensure highlight overrides metallic text */
-  background: none; 
+  background: none;
   -webkit-text-fill-color: var(--primary-glow);
   color: var(--primary-glow);
-  text-shadow: 0 0 20px rgba(99, 102, 241, 0.6);
+  text-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
 }
 
 .container {

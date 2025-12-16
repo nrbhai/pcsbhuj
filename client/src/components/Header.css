@@ -1,12 +1,14 @@
 /* Header Clean Redesign - Premium Dark Theme */
 .header {
-  background: rgba(2, 6, 23, 0.85); /* Dark Glass */
+  background: rgba(2, 6, 23, 0.85);
+  /* Dark Glass */
   backdrop-filter: blur(12px);
   padding: 1rem 0;
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Subtle border */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  /* Subtle border */
   transition: all 0.3s ease;
 }
 
@@ -27,8 +29,8 @@
 }
 
 .logo-image {
-  width: 40px;
-  height: 40px;
+  width: 70px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,7 +42,7 @@
   object-fit: contain;
   /* Ensure logo is visible on dark bg (if it's black, invert it or use filter) */
   /* Assuming svg logo is adaptable or colorful. If black, add: */
-  /* filter: invert(1); */ 
+  /* filter: invert(1); */
 }
 
 .logo-text .company-name {
@@ -123,7 +125,7 @@
 
   .nav.active {
     max-height: 400px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
   }
 
   .nav ul {

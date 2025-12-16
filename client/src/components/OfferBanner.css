@@ -8,7 +8,7 @@
   overflow: hidden;
   position: relative;
   z-index: 10;
-  box-shadow: 0 2px 12px rgba(37, 99, 235, 0.15);
+  box-shadow: 0 2px 12px rgba(255, 0, 0, 0.15);
 }
 
 .offer-scroll {
@@ -30,11 +30,12 @@
   display: inline-flex;
   align-items: center;
   margin-right: 2.5rem;
-  background: rgba(37, 99, 235, 0.1); /* Royal Blue Tint */
+  background: rgba(255, 0, 0, 0.1);
+  /* Bright Red Tint */
   border-radius: 20px;
   padding: 0.25rem 1.1rem;
-  border: 1px solid rgba(37, 99, 235, 0.2);
-  box-shadow: 0 1px 4px rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(255, 0, 0, 0.2);
+  box-shadow: 0 1px 4px rgba(255, 0, 0, 0.1);
 }
 
 .offer-product {
@@ -43,7 +44,8 @@
 }
 
 .offer-price {
-  color: #fcf6ba; /* Light Gold */
+  color: #fcf6ba;
+  /* Light Gold */
   text-shadow: 0 0 10px rgba(191, 149, 63, 0.5);
 }
 
@@ -52,10 +54,12 @@
     font-size: 0.98rem;
     padding: 0.35rem 0;
   }
+
   .offer-item {
     margin-right: 1.2rem;
     padding: 0.18rem 0.7rem;
   }
+
   .offer-scroll {
     gap: 1.2rem;
   }

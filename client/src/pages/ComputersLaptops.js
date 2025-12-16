@@ -140,9 +140,7 @@ function ComputersLaptops() {
                   </div>
                 </div>
                 <div className="brand-info">
-                  <div className="brand-logo-small">
-                    <img src={brand.logo} alt={brand.name} />
-                  </div>
+
                   <h3>{brand.name}</h3>
                   <p>{brand.description}</p>
                 </div>
