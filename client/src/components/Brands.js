@@ -6,82 +6,56 @@ function Brands() {
   const brandCategories = [
     {
       category: 'Computers & Laptops',
-      icon: '💻',
-      image: 'brand-computers.jpg',
+      description: 'High-performance workstations and daily drivers.',
       link: '/computers-laptops',
       color: 'blue',
       brands: [
-        { name: 'Lenovo', logo: 'lenovo-logo.png' },
-        { name: 'HP', logo: 'hp-logo.png' },
-        { name: 'Dell', logo: 'dell-logo.png' },
-        { name: 'Asus', logo: 'asus-logo.png' },
-        { name: 'Acer', logo: 'acer-logo.png' }
+        'Lenovo ThinkPad', 'HP Pavilion', 'Dell XPS', 'Asus ROG', 'Acer Nitro'
       ]
     },
     {
-      category: 'CCTV Systems',
-      icon: '📹',
-      image: 'brand-cctv.jpg',
+      category: 'CCTV Security',
+      description: 'Advanced surveillance for complete peace of mind.',
       link: '/cctv',
       color: 'purple',
       brands: [
-        { name: 'CP Plus', logo: 'cpplus-logo.png' },
-        { name: 'Hikvision', logo: 'hikvision-logo.png' },
-        { name: 'Dahua', logo: 'dahua-logo.png' }
+        'CP Plus', 'Hikvision', 'Dahua', 'EZVIZ', 'Honeywell'
       ]
     },
     {
-      category: 'Accessories',
-      icon: '🖱️',
-      image: 'brand-accessories.jpg',
+      category: 'Peripherals',
+      description: 'Premium accessories to boost your productivity.',
       link: '/accessories',
       color: 'green',
       brands: [
-        { name: 'Logitech', logo: 'logitech-logo.png' },
-        { name: 'TVS', logo: 'tvs-logo.png' },
-        { name: 'HP', logo: 'hp-logo.png' },
-        { name: 'Dell', logo: 'dell-logo.png' }
+        'Logitech', 'Razer', 'HyperX', 'TVS Gold', 'Microsoft'
       ]
     },
     {
-      category: 'Printers',
-      icon: '🖨️',
-      image: 'brand-printers.jpg',
+      category: 'Printers & Ink',
+      description: 'Reliable printing solutions for home and office.',
       link: '/printers',
       color: 'orange',
       brands: [
-        { name: 'HP', logo: 'hp-logo.png' },
-        { name: 'Canon', logo: 'canon-logo.png' },
-        { name: 'Epson', logo: 'epson-logo.png' },
-        { name: 'Brother', logo: 'brother-logo.png' }
+        'HP LaserJet', 'Canon Pixma', 'Epson EcoTank', 'Brother'
       ]
     },
     {
-      category: 'Softwares',
-      icon: '💼',
-      image: 'brand-software.jpg',
+      category: 'Software',
+      description: 'Genuine licenses for OS, Accounting, and Security.',
       link: '/software',
       color: 'pink',
       brands: [
-        { name: 'Tally', logo: 'tally-logo.png' },
-        { name: 'Microsoft Office', logo: 'office-logo.png' },
-        { name: 'Adobe', logo: 'adobe-logo.png' },
-        { name: 'Quick Heal', logo: 'quickheal-logo.png' },
-        { name: 'ESET', logo: 'eset-logo.png' },
-        { name: 'NPAV', logo: 'npav-logo.png' }
+        'Tally Prime', 'Microsoft 365', 'Adobe CC', 'Quick Heal', 'Guardian'
       ]
     },
     {
-      category: 'Networking & Servers',
-      icon: '🖥️',
-      image: 'brand-servers.jpg',
+      category: 'Networking',
+      description: 'Enterprise-grade switching and routing hardware.',
       link: '/networking',
       color: 'teal',
       brands: [
-        { name: 'Lenovo', logo: 'lenovo-logo.png' },
-        { name: 'HP', logo: 'hp-logo.png' },
-        { name: 'Dell', logo: 'dell-logo.png' },
-        { name: 'Cisco', logo: 'cisco-logo.png' }
+        'Cisco', 'D-Link', 'TP-Link', 'Ubiquiti', 'Netgear'
       ]
     }
   ];
@@ -89,7 +63,7 @@ function Brands() {
   return (
     <section className="brands" id="brands">
       <div className="container">
-        <h2 className="section-title">Dealing In</h2>
+        <h2 className="section-title">Premium <span className="text-highlight">Brands</span></h2>
         <p className="section-subtitle">
           We partner with industry-leading brands to provide you with the best quality products and services
         </p>
@@ -97,26 +71,19 @@ function Brands() {
         <div className="brands-grid">
           {brandCategories.map((item, index) => (
             <Link key={index} to={item.link} className={`brand-category-card card-${item.color}`}>
-              <div className="brand-image-container">
-                <img 
-                  src={`/images/${item.image}`} 
-                  alt={item.category}
-                  className="brand-category-image"
-                />
-              </div>
               <div className="brand-content">
                 <h3>{item.category}</h3>
-                <div className="brand-logos">
+                <p className="category-description">{item.description}</p>
+                
+                <div className="brand-tags">
                   {item.brands.map((brand, idx) => (
-                    <div key={idx} className="brand-logo-item" title={brand.name}>
-                      <img 
-                        src={`/images/logos/${brand.logo}`} 
-                        alt={`${brand.name} logo`}
-                      />
-                    </div>
+                    <span key={idx} className="brand-tag">
+                      {brand}
+                    </span>
                   ))}
                 </div>
-                <div className="view-details">View Details →</div>
+                
+                <div className="view-details">Explore Catalog →</div>
               </div>
             </Link>
           ))}

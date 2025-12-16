@@ -44,7 +44,7 @@ function Header() {
             />
           </div>
           <div className="logo-text">
-            <h1>Pioneer Computer Services</h1>
+            <div className="company-name">Pioneer Computer Services</div>
             <p className="tagline">Since 1993</p>
           </div>
         </div>
@@ -60,7 +60,7 @@ function Header() {
             <li><a onClick={() => handleNavClick('home')}>Home</a></li>
             <li><a onClick={() => handleNavClick('about')}>About</a></li>
             <li><a onClick={() => handleNavClick('services')}>Services</a></li>
-            <li><a onClick={() => handleNavClick('brands')}>Products</a></li>
+            <li><a onClick={() => { setMenuOpen(false); navigate('/products'); }}>Products</a></li>
             <li><a onClick={() => handleNavClick('contact')}>Contact</a></li>
           </ul>
         </nav>

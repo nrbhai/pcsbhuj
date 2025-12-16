@@ -50,6 +50,69 @@ A modern, professional website for Pioneer Computer Services, Bhuj - serving the
 - **Run client only**: `npm run client`
 - **Install client dependencies**: `npm run install-client`
 
+## Deploying to GitHub & Vercel
+
+Follow these steps to upload the project to Git and deploy on Vercel.
+
+### 1) Initialize Git and push to GitHub
+
+1. Ensure you are in the project root (folder `pioneer`).
+2. Initialize a new repo and commit all files:
+   - git init
+   - git add .
+   - git commit -m "Initial commit: Pioneer Computer Services website"
+3. Create an empty repository on your GitHub account (do not add a README/license on GitHub to avoid conflicts).
+4. Add the remote and push:
+   - git remote add origin https://github.com/<your-username>/<your-repo>.git
+   - git branch -M main
+   - git push -u origin main
+
+Notes:
+- A root .gitignore is already included to ignore node_modules, build output, logs, and environment files.
+- The project is structured as a simple monorepo: root contains server (for local dev) and client (React app for production deploy).
+
+### 2) Deploy to Vercel
+
+This repo includes a ready-to-use `vercel.json` and serverless API routes so you can deploy without extra configuration.
+
+What’s already set up:
+- vercel.json uses Create React App framework detection and builds the frontend from `client/`.
+- Build command: `npm run install-client && npm run build`
+- Output directory: `client/build` (Vercel will serve the built React app)
+- SPA routing is enabled with rewrites so client-side routes work
+- Serverless functions in `/api` provide the same data as the local Express server:
+  - GET /api/company-info
+  - GET /api/services
+  - POST /api/contact
+- React code has been updated to use relative API paths (`/api/...`) for production
+
+Steps to deploy:
+1. Go to https://vercel.com and click “New Project”.
+2. Import the GitHub repository you pushed above.
+3. Vercel will auto-detect settings using `vercel.json`. Confirm or set:
+   - Framework Preset: Create React App
+   - Root Directory: repository root (not `client`)
+   - Build Command: npm run install-client && npm run build
+   - Output Directory: client/build
+4. Click Deploy. First build can take a few minutes.
+
+Local development on Vercel (optional):
+- You can run `vercel dev` if you use the Vercel CLI. This will serve the React app and the `/api` functions together.
+
+### 3) How local dev works
+
+- For local development, you can still use the Express server provided in `server/` by running:
+  - npm run install-all
+  - npm run dev (starts server on 5000 and client on 3000)
+- The client has a CRA proxy pointing to `http://localhost:5000` for local API calls.
+- In production on Vercel, the React app calls `/api/...` which are served by Vercel serverless functions.
+
+### Troubleshooting
+
+- If you see old styles after deploy, hard refresh (Ctrl/Cmd+F5) or purge CDN cache.
+- If routes 404 on refresh, ensure the SPA rewrite to `/index.html` remains in `vercel.json` and that `/api/*` is excluded from that rewrite (already configured).
+- If build fails, verify Node and dependency install logs; you can also try clearing the Vercel build cache and redeploying.
+
 ## Project Structure
 
 ```

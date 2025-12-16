@@ -18,6 +18,7 @@ import Development from './pages/Development';
 import Networking from './pages/Networking';
 import ServiceComputersLaptops from './pages/ServiceComputersLaptops';
 import OfferBanner from './components/OfferBanner';
+import Products from './pages/Products';
 
 function App() {
   useEffect(() => {
@@ -83,6 +84,7 @@ function App() {
             <Route path="/software" element={<Software />} />
             <Route path="/development" element={<Development />} />
             <Route path="/networking" element={<Networking />} />
+            <Route path="/products" element={<Products />} />
           </Routes>
           <Footer />
         </div>

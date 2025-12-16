@@ -5,7 +5,7 @@ function About() {
   const [companyInfo, setCompanyInfo] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/company-info')
+    fetch('/api/company-info')
       .then(response => response.json())
       .then(data => setCompanyInfo(data))
       .catch(error => console.error('Error fetching company info:', error));
@@ -14,100 +14,64 @@ function About() {
   return (
     <section className="about" id="about">
       <div className="container">
-        <div className="section-badge">About Us</div>
-        <h2 className="section-title">
-          <span className="company-name-band">
-            <span className="company-name-highlight">Pioneer Computer Services</span>
-          </span>
-        </h2>
-        <p className="section-subtitle">Trusted technology partner serving Bhuj & Kutch since 1993</p>
         <div className="about-content">
-          <div className="about-image">
-            <img 
-              src="/images/office.jpg" 
-              alt="Pioneer Computer Services Office"
-            />
-            <div className="image-overlay">
-              <p>📍 Located in Bhuj, Kutch</p>
+          <div className="about-image-wrapper">
+            <div className="about-image">
+              <img 
+                src="/images/office.jpg" 
+                alt="Pioneer Computer Services Office"
+              />
+            </div>
+            <div className="image-overlay-badge">
+              <span>📍 Located in Bhuj, Kutch</span>
             </div>
           </div>
           
           <div className="about-text">
-            <h3>Serving Bhuj & Kutch Since 1993</h3>
+            <div className="section-badge">Our Legacy</div>
+            <h3>Pioneering IT <span className="text-highlight">Excellence</span> in Kutch</h3>
             <p>
-              For over three decades, <span className="company-name-highlight">Pioneer Computer Services</span> has been the leading provider of 
-              comprehensive IT solutions in Bhuj, Kutch, and surrounding regions. Our journey began 
-              in 1993 with a simple mission: to bring cutting-edge technology to businesses and 
-              individuals in our community.
+              Since 1993, <strong>Pioneer Computer Services</strong> has stood as the benchmark for technology solutions in the region. 
+              We don't just supply hardware; we engineer comprehensive IT ecosystems that empower businesses to thrive in a digital age.
             </p>
             <p>
-              What sets us apart is our unwavering commitment to exceptional after-sales service. 
-              We don't just sell products; we build lasting relationships with our clients by 
-              providing ongoing support, maintenance, and consultation to ensure your technology 
-              investments deliver maximum value.
+              Our philosophy is rooted in a simple promise: <strong>uncompromising quality and lifetime support.</strong> 
+              When you partner with Pioneer, you gain a dedicated technology ally committed to your long-term success.
             </p>
-            <p>
-              Our team of experienced professionals stays updated with the latest technology trends 
-              and certifications, ensuring that we provide you with the best solutions tailored to 
-              your specific needs.
-            </p>
-          </div>
-          
-          <div className="about-highlights">
-            <div className="highlight-card">
-              <div className="highlight-icon">📅</div>
-              <h4>30+ Years</h4>
-              <p>of Excellence</p>
-            </div>
-            <div className="highlight-card">
-              <div className="highlight-icon">👥</div>
-              <h4>3000+</h4>
-              <p>Customers Supported</p>
-            </div>
-            <div className="highlight-card">
-              <div className="highlight-icon">⭐</div>
-              <h4>{companyInfo?.rating || '4.8'} Stars</h4>
-              <p>Google Rating</p>
-            </div>
-            <div className="highlight-card">
-              <div className="highlight-icon">💬</div>
-              <h4>{companyInfo?.totalReviews || '125'}+</h4>
-              <p>Customer Reviews</p>
-            </div>
-          </div>
 
-          <div className="stats-section">
-            <h3>Our Track Record</h3>
-            <div className="stats-grid">
-              <div className="stat-item">
-                <div className="stat-icon">🖥️</div>
-                <div className="stat-content">
-                  <h4>100+</h4>
-                  <p>Server Installations</p>
-                </div>
+            <div className="highlights-grid">
+              <div className="highlight-card">
+                <span className="highlight-value">30+</span>
+                <span className="highlight-label">Years of Trust</span>
               </div>
-              <div className="stat-item">
-                <div className="stat-icon">📹</div>
-                <div className="stat-content">
-                  <h4>100+</h4>
-                  <p>CCTV Installations</p>
-                </div>
-              </div>
-              <div className="stat-item">
-                <div className="stat-icon">👥</div>
-                <div className="stat-content">
-                  <h4>3000+</h4>
-                  <p>Total Customers Served</p>
-                </div>
-              </div>
-              <div className="stat-item">
-                <div className="stat-icon">🏢</div>
-                <div className="stat-content">
-                  <h4>500+</h4>
-                  <p>Business Solutions</p>
-                </div>
+              <div className="highlight-card">
+                <span className="highlight-value">3000+</span>
+                <span className="highlight-label">Happy Customers</span>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div className="stats-row">
+          <div className="stat-box">
+            <span className="icon">🖥️</span>
+            <h4>100+</h4>
+            <p>Servers Deployed</p>
+          </div>
+          <div className="stat-box">
+            <span className="icon">📹</span>
+            <h4>500+</h4>
+            <p>CCTV Projects</p>
+          </div>
+          <div className="stat-box">
+            <span className="icon">⭐</span>
+            <h4>{companyInfo?.rating || '4.8'}</h4>
+            <p>Google Rating</p>
+          </div>
+           <div className="stat-box">
+            <span className="icon">🏢</span>
+            <h4>500+</h4>
+            <p>Business Clients</p>
           </div>
         </div>
       </div>

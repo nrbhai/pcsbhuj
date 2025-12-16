@@ -3,7 +3,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Services.css';
+import './ServicesDark.css';
 
 function Services() {
   const [services, setServices] = useState([]);
@@ -11,7 +11,7 @@ function Services() {
 
   useEffect(() => {
     // Fetch services from API
-    fetch('http://localhost:5000/api/services')
+    fetch('/api/services')
       .then(response => response.json())
       .then(data => {
         // Remove any 'Accessories' service returned by the API
@@ -34,7 +34,6 @@ function Services() {
           });
 
         setServices(mapped);
-        console.log('Loaded services:', mapped);
       })
       .catch(error => {
         console.error('Error fetching services:', error);
@@ -42,23 +41,23 @@ function Services() {
         setServices([
           {
             id: 1,
-            title: 'Computers & Laptops Service Support',
-            shortDescription: 'Expert laptop & desktop repairs — fast, reliable on-site & in-shop service.',
-            description: 'Comprehensive repair and maintenance for computers and laptops — hardware diagnostics, component repairs and replacements, operating system and software troubleshooting, performance tuning, and reliable on-site or in-shop support.',
+            title: 'Computers & Laptops',
+            shortDescription: 'High-performance rigs, sleek ultrabooks, and expert repairs.',
+            description: 'Experience peak performance. We provide expert diagnostics, component-level repairs, and premium hardware upgrades for all major brands.',
             icon: '💻'
           },
           {
             id: 2,
-            title: 'CCTV Camera Solutions',
-            shortDescription: 'Professional CCTV installation, monitoring & maintenance.',
-            description: 'Complete surveillance systems with installation and maintenance',
+            title: 'Smart Surveillance',
+            shortDescription: 'Next-gen CCTV systems for 24/7 intelligent security.',
+            description: 'Secure what matters most with AI-powered surveillance, remote monitoring, and professional installation.',
             icon: '📹'
           },
           {
             id: 3,
-            title: 'Software Solutions',
-            shortDescription: 'Genuine software sales, installation and troubleshooting.',
-            description: 'Licensed software, custom development, and software support',
+            title: 'Software Suite',
+            shortDescription: 'Licensed enterprise software & custom digital solutions.',
+            description: 'Empower your workflow with genuine software licenses, custom development, and robust support systems.',
             icon: '💿'
           }
         ]);
@@ -80,106 +79,95 @@ function Services() {
   return (
     <section className="services" id="services">
       <div className="container">
-        <div className="section-badge">What We Offer</div>
-        <h2 className="section-title">Our Services</h2>
-        <p className="section-subtitle">
-          Comprehensive IT solutions tailored to meet your business and personal technology needs
-        </p>
+        <div className="section-header">
+          <span className="section-badge">What We Offer</span>
+          <h2 className="section-title">Our <span className="text-highlight">Services</span></h2>
+          <p className="section-subtitle">
+            Comprehensive IT solutions tailored to meet your business and personal technology needs
+          </p>
+        </div>
         
         <div className="services-grid">
           {services.map((service) => (
-            service.id === 1 ? (
-              <div
-                key={service.id}
-                className="service-card clickable"
-                onClick={() => navigate('/service-computers-laptops')}
-                style={{ cursor: 'pointer' }}
-                tabIndex={0}
-                role="button"
-                aria-label="View Computers & Laptops Service Details"
-                onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') navigate('/service-computers-laptops'); }}
-              >
-                <div className="service-image">
-                  <img src="/images/com-lap.jpg" alt={service.title} />
-                </div>
-                <div className="service-content">
-                  <div className="service-icon">{service.icon}</div>
-                  <h3>{service.title}</h3>
-                  <p>{/computer|laptop/i.test(service.title) ? 'Expert laptop & desktop repairs — fast, reliable on-site & in-shop service.' : getCardDescription(service)}</p>
-                </div>
+            <div
+              key={service.id}
+              className={`service-card ${service.id === 1 ? 'clickable' : ''}`}
+              onClick={service.id === 1 ? () => navigate('/service-computers-laptops') : undefined}
+              style={service.id === 1 ? { cursor: 'pointer' } : {}}
+            >
+              <div className="service-image">
+                {(() => {
+                  let imgSrc = '/images/placeholder-service.svg';
+                  if (/cctv/i.test(service.title)) imgSrc = '/images/cctv.jpg';
+                  else if (/software/i.test(service.title)) imgSrc = '/images/software.jpg';
+                  else if (/server/i.test(service.title)) imgSrc = '/images/server.jpg';
+                  else if (/antivirus|security/i.test(service.title)) imgSrc = '/images/antivirus.jpg';
+                  else if (/computer|laptop/i.test(service.title)) imgSrc = '/images/com-lap.jpg';
+                  return (
+                    <img src={imgSrc} alt={service.title} />
+                  );
+                })()}
               </div>
-            ) : (
-              <div key={service.id} className="service-card">
-                <div className="service-image">
-                  {(() => {
-                    let imgSrc = '/images/placeholder-service.svg';
-                    if (/cctv/i.test(service.title)) imgSrc = '/images/cctv.jpg';
-                    else if (/software/i.test(service.title)) imgSrc = '/images/software.jpg';
-                    else if (/server/i.test(service.title)) imgSrc = '/images/server.jpg';
-                    else if (/antivirus|security/i.test(service.title)) imgSrc = '/images/antivirus.jpg';
-                    // fallback for computers/laptops
-                    else if (/computer|laptop/i.test(service.title)) imgSrc = '/images/com-lap.jpg';
-                    return (
-                      <img src={imgSrc} alt={service.title} />
-                    );
-                  })()}
-                </div>
-                <div className="service-content">
-                  <div className="service-icon">{service.icon}</div>
-                  <h3>{service.title}</h3>
-                  <p>{/computer|laptop/i.test(service.title) ? 'Expert laptop & desktop repairs — fast, reliable on-site & in-shop service.' : getCardDescription(service)}</p>
-                </div>
+              <div className="service-content">
+                <div className="service-icon">{service.icon}</div>
+                <h3>{service.title}</h3>
+                <p>{/computer|laptop/i.test(service.title) ? 'Expert laptop & desktop repairs — fast, reliable on-site & in-shop service.' : getCardDescription(service)}</p>
+                {service.id === 1 && (
+                  <span className="service-link">
+                    Learn More <span>→</span>
+                  </span>
+                )}
               </div>
-            )
+            </div>
           ))}
         </div>
 
         <div className="why-choose">
-          <h3>Why Choose Us?</h3>
-          <div className="features-grid">
-            <div className="feature-item">
-              <div className="feature-icon">⭐</div>
-              <div className="feature-content">
-                <h4>30+ Years of Experience</h4>
-                <p>Trusted since 1993</p>
+            <h3>Why Choose <span className="text-highlight">Pioneer?</span></h3>
+            <div className="features-grid">
+              <div className="feature-item">
+                <div className="feature-icon">⭐</div>
+                <div className="feature-content">
+                  <h4>30+ Years</h4>
+                  <p>Trusted since 1993</p>
+                </div>
+              </div>
+              <div className="feature-item">
+                <div className="feature-icon">👥</div>
+                <div className="feature-content">
+                  <h4>Expert Team</h4>
+                  <p>Skilled professionals</p>
+                </div>
+              </div>
+              <div className="feature-item">
+                <div className="feature-icon">🛠️</div>
+                <div className="feature-content">
+                  <h4>Best Support</h4>
+                  <p>Always here for you</p>
+                </div>
+              </div>
+              <div className="feature-item">
+                <div className="feature-icon">💰</div>
+                <div className="feature-content">
+                  <h4>Fair Pricing</h4>
+                  <p>Best value guaranteed</p>
+                </div>
+              </div>
+              <div className="feature-item">
+                <div className="feature-icon">✅</div>
+                <div className="feature-content">
+                  <h4>Genuine Products</h4>
+                  <p>100% authentic</p>
+                </div>
+              </div>
+              <div className="feature-item">
+                <div className="feature-icon">⚡</div>
+                <div className="feature-content">
+                  <h4>Quick Response</h4>
+                  <p>Fast & reliable</p>
+                </div>
               </div>
             </div>
-            <div className="feature-item">
-              <div className="feature-icon">👥</div>
-              <div className="feature-content">
-                <h4>Expert Technical Team</h4>
-                <p>Skilled professionals</p>
-              </div>
-            </div>
-            <div className="feature-item">
-              <div className="feature-icon">🛠️</div>
-              <div className="feature-content">
-                <h4>Best After-Sales Support</h4>
-                <p>We're always here</p>
-              </div>
-            </div>
-            <div className="feature-item">
-              <div className="feature-icon">💰</div>
-              <div className="feature-content">
-                <h4>Competitive Pricing</h4>
-                <p>Best value guaranteed</p>
-              </div>
-            </div>
-            <div className="feature-item">
-              <div className="feature-icon">✅</div>
-              <div className="feature-content">
-                <h4>Genuine Products</h4>
-                <p>100% authentic</p>
-              </div>
-            </div>
-            <div className="feature-item">
-              <div className="feature-icon">⚡</div>
-              <div className="feature-content">
-                <h4>Quick Response Time</h4>
-                <p>Fast & reliable</p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
