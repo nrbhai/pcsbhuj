@@ -37,16 +37,7 @@ function Header() {
     <header className="header">
       <div className="header-container">
         <div className="logo" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
-          <div className="logo-image">
-            <img 
-              src="/images/logo.svg" 
-              alt="Pioneer Computer Services Logo"
-            />
-          </div>
-          <div className="logo-text">
-            <div className="company-name">Pioneer Computer Services</div>
-            <p className="tagline">Since 1993</p>
-          </div>
+          <img src="/images/logo-hari-blue.png" alt="Hari Tech Solutions Logo" className="logo-image" />
         </div>
         
         <button className="menu-toggle" onClick={toggleMenu}>
@@ -57,11 +48,11 @@ function Header() {
 
         <nav className={`nav ${menuOpen ? 'active' : ''}`}>
           <ul>
-            <li><a onClick={() => handleNavClick('home')}>Home</a></li>
-            <li><a onClick={() => handleNavClick('about')}>About</a></li>
-            <li><a onClick={() => handleNavClick('services')}>Services</a></li>
-            <li><a onClick={() => { setMenuOpen(false); navigate('/products'); }}>Products</a></li>
-            <li><a onClick={() => handleNavClick('contact')}>Contact</a></li>
+            <li><button onClick={() => handleNavClick('home')}>Home</button></li>
+            <li><button onClick={() => handleNavClick('about')}>About</button></li>
+            <li><button onClick={() => handleNavClick('services')}>Services</button></li>
+            <li><button onClick={() => { setMenuOpen(false); navigate('/products'); }}>Products</button></li>
+            <li><button onClick={() => handleNavClick('contact')}>Contact</button></li>
           </ul>
         </nav>
       </div>

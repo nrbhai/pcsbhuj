@@ -123,7 +123,7 @@ function Services() {
         </div>
 
         <div className="why-choose">
-            <h3>Why Choose <span className="text-highlight">Pioneer?</span></h3>
+            <h3>Why Choose <span className="text-highlight">Hari Tech?</span></h3>
             <div className="features-grid">
               <div className="feature-item">
                 <div className="feature-icon">⭐</div>

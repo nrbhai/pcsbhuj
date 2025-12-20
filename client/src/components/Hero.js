@@ -10,7 +10,7 @@ function Hero() {
   const productKeywords = ['Laptop', 'Desktop', 'Accessory', 'Peripheral', 'Networking', 'CCTV', 'Printer', 'Software'];
   const carouselImages = Array.from({ length: 15 }, (_, i) => ({
     src: `/images/pic${i + 1}.jpg`,
-    alt: `Pioneer Computer Services - ${productKeywords[i % productKeywords.length]} ${i + 1}`
+    alt: `Hari Tech Solutions - ${productKeywords[i % productKeywords.length]} ${i + 1}`
   }));
 
   useEffect(() => {
@@ -20,12 +20,7 @@ function Hero() {
       .catch(error => console.error('Error fetching company info:', error));
   }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [carouselImages.length]);
+  // Carousel auto-rotation removed for "steady" effect
 
   const scrollToContact = () => {
     const element = document.getElementById('contact');
@@ -38,7 +33,7 @@ function Hero() {
     <div>
       <Helmet>
         <>
-          <title>Pioneer Computer Services - Best Computer Shop in Bhuj, Kutch</title>
+          <title>Hari Tech Solutions - Best Computer Shop in Bhuj, Kutch</title>
           <meta name="description" content="Leading IT solutions provider in Bhuj, Kutch since 1993. Authorized dealer for laptops, CCTV, networking & software." />
         </>
       </Helmet>

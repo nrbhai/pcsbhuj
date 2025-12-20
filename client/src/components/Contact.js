@@ -31,7 +31,7 @@ function Contact() {
       `Message:\n${formData.message}`
     );
     
-    window.location.href = `mailto:pioneerbhuj@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@haritechsolutions.com?subject=${subject}&body=${body}`;
     
     // Show success message
     setStatus({ 
@@ -49,7 +49,7 @@ function Contact() {
           <span className="section-badge">Contact Us</span>
           <h2 className="section-title">Ready to <span className="text-highlight">Upgrade?</span></h2>
           <p className="section-subtitle">
-            Experience the Pioneer difference. Whether you need a single laptop or a complete office infrastructure, 
+            Experience the Hari Tech difference. Whether you need a single laptop or a complete office infrastructure, 
             our experts are ready to design the perfect solution for you.
           </p>
         </div>
@@ -152,7 +152,7 @@ function Contact() {
                 <div className="info-icon">📧</div>
                 <div className="info-content">
                   <h4>Email Us</h4>
-                  <p><a href="mailto:pioneerbhuj@gmail.com">pioneerbhuj@gmail.com</a></p>
+                  <p><a href="mailto:info@haritechsolutions.com">info@haritechsolutions.com</a></p>
                 </div>
               </div>
 
@@ -165,7 +165,7 @@ function Contact() {
               </div>
 
               <a 
-                href="https://wa.me/919825034580?text=Hello%20Pioneer%20Computer%20Services,%20I%20would%20like%20to%20know%20more%20about%20your%20services" 
+                href="https://wa.me/919825034580?text=Hello%20Hari%20Tech%20Solutions,%20I%20would%20like%20to%20know%20more%20about%20your%20services" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="whatsapp-button"
@@ -184,14 +184,14 @@ function Contact() {
           <h3>Find Us on Google Maps</h3>
           <div className="map-container">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3664.8261234567!2d69.6684465!3d23.2526169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3950e3f714547545%3A0x34dc6f86bb0a6913!2sPIONEER%20COMPUTER%20SERVICES!5e0!3m2!1sen!2sin!4v1699999999999!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3664.8261234567!2d69.6684465!3d23.2526169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3950e3f714547545%3A0x34dc6f86bb0a6913!2sHARI%20TECH%20SOLUTIONS!5e0!3m2!1sen!2sin!4v1699999999999!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Pioneer Computer Services Location"
+              title="Hari Tech Solutions Location"
             ></iframe>
           </div>
         </div>

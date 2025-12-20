@@ -1,6 +1,6 @@
-# Pioneer Computer Services Website
+# Hari Tech Solutions Website
 
-A modern, professional website for Pioneer Computer Services, Bhuj - serving the IT needs of Kutch region since 1993.
+A modern, professional website for Hari Tech Solutions, Bhuj - serving the IT needs of Kutch region since 1993.
 
 ## Features
 
@@ -60,7 +60,7 @@ Follow these steps to upload the project to Git and deploy on Vercel.
 2. Initialize a new repo and commit all files:
    - git init
    - git add .
-   - git commit -m "Initial commit: Pioneer Computer Services website"
+   - git commit -m "Initial commit: Hari Tech Solutions website"
 3. Create an empty repository on your GitHub account (do not add a README/license on GitHub to avoid conflicts).
 4. Add the remote and push:
    - git remote add origin https://github.com/<your-username>/<your-repo>.git
@@ -171,4 +171,4 @@ Each component has its own CSS file in `client/src/components/` for easy customi
 
 ## License
 
-Copyright © 2025 Pioneer Computer Services. All rights reserved.
+Copyright © 2025 Hari Tech Solutions. All rights reserved.

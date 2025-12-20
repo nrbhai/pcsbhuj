@@ -9,6 +9,7 @@ function Brands() {
       description: 'High-performance workstations and daily drivers.',
       link: '/computers-laptops',
       color: 'blue',
+      image: '/images/brand-computers.jpg',
       brands: [
         'Lenovo ThinkPad', 'HP Pavilion', 'Dell XPS', 'Asus ROG', 'Acer Nitro'
       ]
@@ -18,6 +19,7 @@ function Brands() {
       description: 'Advanced surveillance for complete peace of mind.',
       link: '/cctv',
       color: 'purple',
+      image: '/images/brand-cctv.jpg',
       brands: [
         'CP Plus', 'Hikvision', 'Dahua', 'EZVIZ', 'Honeywell'
       ]
@@ -27,6 +29,7 @@ function Brands() {
       description: 'Premium accessories to boost your productivity.',
       link: '/accessories',
       color: 'green',
+      image: '/images/brand-accessories.jpg',
       brands: [
         'Logitech', 'Razer', 'HyperX', 'TVS Gold', 'Microsoft'
       ]
@@ -36,6 +39,7 @@ function Brands() {
       description: 'Reliable printing solutions for home and office.',
       link: '/printers',
       color: 'orange',
+      image: '/images/brand-printers.jpg',
       brands: [
         'HP LaserJet', 'Canon Pixma', 'Epson EcoTank', 'Brother'
       ]
@@ -45,6 +49,7 @@ function Brands() {
       description: 'Genuine licenses for OS, Accounting, and Security.',
       link: '/software',
       color: 'pink',
+      image: '/images/brand-software.jpg',
       brands: [
         'Tally Prime', 'Microsoft 365', 'Adobe CC', 'Quick Heal', 'Guardian'
       ]
@@ -54,6 +59,7 @@ function Brands() {
       description: 'Enterprise-grade switching and routing hardware.',
       link: '/networking',
       color: 'teal',
+      image: '/images/brand-servers.jpg',
       brands: [
         'Cisco', 'D-Link', 'TP-Link', 'Ubiquiti', 'Netgear'
       ]
@@ -63,7 +69,7 @@ function Brands() {
   return (
     <section className="brands" id="brands">
       <div className="container">
-        <h2 className="section-title">Premium <span className="text-highlight">Brands</span></h2>
+        <h2 className="section-title">Dealing in <span className="text-highlight">Products</span></h2>
         <p className="section-subtitle">
           We partner with industry-leading brands to provide you with the best quality products and services
         </p>
@@ -71,6 +77,9 @@ function Brands() {
         <div className="brands-grid">
           {brandCategories.map((item, index) => (
             <Link key={index} to={item.link} className={`brand-category-card card-${item.color}`}>
+              <div className="brand-image-container">
+                <img src={item.image} alt={item.category} className="brand-card-image" />
+              </div>
               <div className="brand-content">
                 <h3>{item.category}</h3>
                 <p className="category-description">{item.description}</p>

@@ -1,7 +1,7 @@
 {
   "name": "pioneer-computer-services",
   "version": "1.0.0",
-  "description": "Website for Pioneer Computer Services, Bhuj",
+  "description": "Website for Hari Tech Solutions, Bhuj",
   "main": "server/index.js",
   "scripts": {
     "client": "cd client && npm start",
@@ -17,7 +17,7 @@
     "cctv",
     "bhuj"
   ],
-  "author": "Pioneer Computer Services",
+  "author": "Hari Tech Solutions",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",

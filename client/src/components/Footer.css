@@ -1,24 +1,21 @@
-/* Footer Clean Redesign - Premium Dark Theme */
 .footer {
-  background: var(--bg-deep); /* Seamless dark flow */
+  background: #f1f5f9; /* Light gray background */
   color: var(--text-main);
   padding: 6rem 0 2rem;
   position: relative;
   overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* Optional top glow line */
 .footer::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--primary), transparent);
-  box-shadow: 0 0 15px var(--primary);
-  opacity: 0.5;
+  height: 2px;
+  background: var(--gradient-brand);
+  opacity: 0.2;
 }
 
 .footer-content {
@@ -97,10 +94,9 @@
   filter: grayscale(0);
 }
 
-/* Footer Bottom */
 .footer-divider {
   height: 1px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.05);
   margin-bottom: 2rem;
 }
 
@@ -128,7 +124,8 @@
   font-size: 0.75rem;
   padding: 0.25rem 0.75rem;
   border-radius: 50px;
-  background: rgba(255, 255, 255, 0.05);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.03);
   color: var(--text-muted);
 }
 

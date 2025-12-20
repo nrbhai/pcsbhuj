@@ -26,7 +26,7 @@ function App() {
     const structuredData = {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "Pioneer Computer Services",
+      "name": "Hari Tech Solutions",
       "image": "https://pioneercomputerservices.com/images/logo.svg",
       "@id": "https://pioneercomputerservices.com",
       "url": "https://pioneercomputerservices.com",

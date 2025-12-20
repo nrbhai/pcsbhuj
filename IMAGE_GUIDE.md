@@ -1,4 +1,4 @@
-# Image Placement Guide for Pioneer Computer Services Website
+# Image Placement Guide for Hari Tech Solutions Website
 
 ## 📁 Image Folder Location
 **Path:** `c:\website_project\pioneer\client\public\images\`

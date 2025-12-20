@@ -9,7 +9,7 @@ function Footer() {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section footer-about">
-            <h3 className="company-name-highlight">Pioneer Computer Services</h3>
+            <h3 className="company-name-highlight">Hari <span style={{ fontSize: '0.6em', opacity: 0.8, fontWeight: 400 }}>Tech Solutions</span></h3>
             <p>
               Transforming technology into success since 1993. We deliver cutting-edge IT solutions, 
               premium hardware, and unmatched after-sales support to businesses and individuals across Kutch.
@@ -48,7 +48,7 @@ function Footer() {
             <ul>
               <li><span className="contact-icon">📍</span> Dhatia Falia 3 Ways, Anam Ring Road<br/>Bhuj, Gujarat - 370001</li>
               <li><span className="contact-icon">📞</span> <a href="tel:+919825034580">+91 98250 34580</a><br/><a href="tel:+919512234395">+91 95122 34395</a></li>
-              <li><span className="contact-icon">📧</span> <a href="mailto:pioneerbhuj@gmail.com">pioneerbhuj@gmail.com</a></li>
+              <li><span className="contact-icon">📧</span> <a href="mailto:info@haritechsolutions.com">info@haritechsolutions.com</a></li>
               <li><span className="contact-icon">🕒</span> Mon-Sat: 10:00 AM - 8:30 PM</li>
             </ul>
           </div>
@@ -58,7 +58,7 @@ function Footer() {
 
         <div className="footer-bottom redesigned-footer-bottom">
           <div className="footer-bottom-content redesigned-footer-bottom-content">
-            <span className="copyright">&copy; {currentYear} <span className="company-name-highlight">Pioneer Computer Services</span>. All rights reserved.</span>
+            <span className="copyright">&copy; {currentYear} <span className="company-name-highlight">Hari Tech Solutions</span>. All rights reserved.</span>
             <span className="footer-divider-dot">|</span>
             <span className="tagline">Empowering Kutch with Technology Excellence for Over 30 Years</span>
             <span className="footer-divider-dot">|</span>

@@ -19,7 +19,7 @@ function About() {
             <div className="about-image">
               <img 
                 src="/images/office.jpg" 
-                alt="Pioneer Computer Services Office"
+                alt="Hari Tech Solutions Office"
               />
             </div>
             <div className="image-overlay-badge">
@@ -29,14 +29,14 @@ function About() {
           
           <div className="about-text">
             <div className="section-badge">Our Legacy</div>
-            <h3>Pioneering IT <span className="text-highlight">Excellence</span> in Kutch</h3>
+            <h3>Hari Tech <span className="text-highlight">Solutions</span> in Kutch</h3>
             <p>
-              Since 1993, <strong>Pioneer Computer Services</strong> has stood as the benchmark for technology solutions in the region. 
+              Since 1993, <strong>Hari Tech Solutions</strong> has stood as the benchmark for technology solutions in the region. 
               We don't just supply hardware; we engineer comprehensive IT ecosystems that empower businesses to thrive in a digital age.
             </p>
             <p>
               Our philosophy is rooted in a simple promise: <strong>uncompromising quality and lifetime support.</strong> 
-              When you partner with Pioneer, you gain a dedicated technology ally committed to your long-term success.
+              When you partner with Hari Tech Solutions, you gain a dedicated technology ally committed to your long-term success.
             </p>
 
             <div className="highlights-grid">
